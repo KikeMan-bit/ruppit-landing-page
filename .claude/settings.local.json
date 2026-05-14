@@ -12,7 +12,8 @@
       "Bash(powershell -c 'Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('\\\\''C:/Users/Carlos/Documents/Coudin/rupi-landing-page/public/app-image-1.png'\\\\''\\); Write-Output \"$\\($img.Width\\)x$\\($img.Height\\)\"')",
       "Bash(pnpm add *)",
       "Bash(pnpm build *)",
-      "Bash(firebase deploy *)"
+      "Bash(firebase deploy *)",
+      "Bash(pnpm dlx *)"
     ]
   }
 }

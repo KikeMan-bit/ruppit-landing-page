@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link href="/" className="font-bold text-lg tracking-tight text-gray-900">
           <Image src="/logo.png" alt="Ruppit" width={100} height={100} />
         </Link>
-        <button className="bg-gray-900 text-white px-4 md:px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-700 transition-colors">
+        <button className="bg-primary text-white px-4 md:px-5 py-2 rounded-full text-sm font-medium hover:bg-[#9c14e0] transition-colors">
           Próximamente
         </button>
       </nav>
