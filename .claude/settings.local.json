@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm dev *)",
+      "Bash(npx shadcn@latest init -d)",
+      "Bash(npx magicui-cli@latest init)",
+      "Bash(npx shadcn@latest add \"https://magicui.design/r/animated-gradient-text\" --yes)",
+      "Bash(npx shadcn@latest add \"https://magicui.design/r/blur-fade\" --yes)",
+      "Bash(npx shadcn@latest add \"https://magicui.design/r/shimmer-button\" --yes)",
+      "Bash(npx shadcn@latest add \"https://magicui.design/r/avatar-circles\" --yes)",
+      "Bash(python -c \"from PIL import Image; img = Image.open\\('C:/Users/Carlos/Documents/Coudin/rupi-landing-page/public/app-image-1.png'\\); print\\(img.size, img.mode\\)\")",
+      "Bash(powershell -c 'Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('\\\\''C:/Users/Carlos/Documents/Coudin/rupi-landing-page/public/app-image-1.png'\\\\''\\); Write-Output \"$\\($img.Width\\)x$\\($img.Height\\)\"')",
+      "Bash(pnpm add *)",
+      "Bash(pnpm build *)",
+      "Bash(firebase deploy *)"
+    ]
+  }
+}
