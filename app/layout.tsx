@@ -13,8 +13,64 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ruppit",
-  description: "Ruppit es una plataforma de transporte que conecta pasajeros con conductores de forma justa, rápida y transparente.",
+  metadataBase: new URL("https://ruppit.com"),
+  title: {
+    default: "Ruppit – Viaja a tu precio en Camiri, Bolivia",
+    template: "%s | Ruppit",
+  },
+  description:
+    "Ruppit es la app de movilidad compartida donde tú propones el precio de tu viaje. Conecta con conductores verificados en Camiri, Bolivia. Sin precios impuestos, sin sorpresas.",
+  keywords: [
+    "Ruppit",
+    "app de transporte Bolivia",
+    "movilidad compartida Camiri",
+    "viaje compartido Bolivia",
+    "taxi app Bolivia",
+    "conductor verificado",
+    "proponer precio viaje",
+    "transporte alternativo Bolivia",
+    "carpooling Bolivia",
+    "ride sharing Bolivia",
+    "Camiri Bolivia transporte",
+    "app movilidad Bolivia",
+  ],
+  authors: [{ name: "Ruppit", url: "https://ruppit.com" }],
+  creator: "Ruppit",
+  publisher: "Ruppit",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_BO",
+    siteName: "Ruppit",
+    title: "Ruppit – Viaja a tu precio en Camiri, Bolivia",
+    description:
+      "La app de movilidad compartida donde tú propones el precio. Conductores verificados, sin sorpresas.",
+    images: [
+      {
+        url: "/logo.webp",
+        width: 512,
+        height: 512,
+        alt: "Ruppit – App de movilidad compartida en Bolivia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Ruppit – Viaja a tu precio en Camiri, Bolivia",
+    description:
+      "La app de movilidad compartida donde tú propones el precio. Conductores verificados, sin sorpresas.",
+    images: ["/logo.webp"],
+  },
 };
 
 export default function RootLayout({
@@ -24,9 +80,13 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://i.pravatar.cc" />
+        <link rel="dns-prefetch" href="https://i.pravatar.cc" />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

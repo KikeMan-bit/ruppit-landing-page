@@ -85,6 +85,7 @@ export function BlurFade({
           ...(shouldTransitionFilter ? { filter: { duration } } : {}),
         }}
         className={className}
+        style={{ willChange: "transform, opacity, filter" }}
         {...props}
       >
         {children}

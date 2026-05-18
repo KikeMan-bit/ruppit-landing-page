@@ -4,8 +4,11 @@ import Footer from "@/app/components/Footer";
 import TermsAndConditions from "@/app/components/terms-and-conditions";
 
 export const metadata: Metadata = {
-  title: "Términos y Condiciones - Ruppit",
-  description: "Términos y Condiciones de uso de Ruppit",
+  title: "Términos y Condiciones",
+  description:
+    "Lee los términos y condiciones de uso de Ruppit, la app de movilidad compartida en Bolivia.",
+  robots: { index: false, follow: false },
+  alternates: { canonical: "https://ruppit.com/terms-and-conditions" },
 };
 
 export default function TermsPage() {

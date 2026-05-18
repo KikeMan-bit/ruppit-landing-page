@@ -6,16 +6,16 @@ import { WordRotate } from "@/components/ui/word-rotate";
 import { Particles } from "@/components/ui/particles";
 
 const avatars = [
-  { imageUrl: "https://i.pravatar.cc/150?img=47", profileUrl: "#" },
-  { imageUrl: "https://i.pravatar.cc/150?img=32", profileUrl: "#" },
-  { imageUrl: "https://i.pravatar.cc/150?img=25", profileUrl: "#" },
-  { imageUrl: "https://i.pravatar.cc/150?img=44", profileUrl: "#" },
+  { imageUrl: "https://i.pravatar.cc/60?img=47", profileUrl: "#" },
+  { imageUrl: "https://i.pravatar.cc/60?img=32", profileUrl: "#" },
+  { imageUrl: "https://i.pravatar.cc/60?img=25", profileUrl: "#" },
+  { imageUrl: "https://i.pravatar.cc/60?img=44", profileUrl: "#" },
 ];
 
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center text-center px-4 sm:px-6 pt-10 pb-0 flex-1 overflow-hidden">
-      <Particles className="absolute inset-0 pointer-events-none" quantity={120} color="#b121ff" size={0.6} />
+      <Particles className="absolute inset-0 pointer-events-none" quantity={30} color="#b121ff" size={0.6} />
       {/* Badge */}
       <BlurFade delay={0.1} direction="up">
         <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-full pl-2 pr-4 sm:pr-5 py-1.5 text-xs sm:text-sm mb-6 sm:mb-8 shadow-sm">
@@ -72,7 +72,7 @@ export default function Hero() {
           priority
           className="w-[220px] sm:w-[280px] md:w-[320px] h-auto"
         /> */}
-        <Android src="/rupi-maps-3.png" className="w-[220px] sm:w-[280px] md:w-[320px] h-auto" />
+        <Android src="/rupi-maps-3.webp" className="w-[220px] sm:w-[280px] md:w-[320px] h-auto" />
 
       </div>
     </section>

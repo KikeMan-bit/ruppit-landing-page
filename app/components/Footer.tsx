@@ -63,7 +63,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-4">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Ruppit"
                 width={100}
                 height={100}
@@ -76,7 +76,7 @@ export default function Footer() {
 
             {/* Ruppit links */}
             <div className="flex flex-col gap-3">
-              <h4 className="font-semibold text-gray-900 text-sm">Ruppit</h4>
+              <h3 className="font-semibold text-gray-900 text-sm">Ruppit</h3>
               <nav className="flex flex-col gap-2">
                 {["Funciones", "Cómo funciona", "Testimonios"].map((link) => (
                   <a key={link} href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
@@ -88,7 +88,7 @@ export default function Footer() {
 
             {/* Legal links */}
             <div className="flex flex-col gap-3">
-              <h4 className="font-semibold text-gray-900 text-sm">Legal</h4>
+              <h3 className="font-semibold text-gray-900 text-sm">Legal</h3>
               <nav className="flex flex-col gap-2">
                 <Link href="/terms-and-conditions" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   Términos y Condiciones
@@ -101,7 +101,7 @@ export default function Footer() {
 
             {/* Social links */}
             <div className="flex flex-col gap-3">
-              <h4 className="font-semibold text-gray-900 text-sm">Síguenos</h4>
+              <h3 className="font-semibold text-gray-900 text-sm">Síguenos</h3>
               <nav className="flex flex-col gap-2">
                 {[
                   { label: "Instagram", Icon: InstagramIcon },
@@ -120,7 +120,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-3 pt-4 border-t border-gray-300/40">
-          <span className="text-xs text-gray-400">© 2026 Ruppit. Todos los derechos reservados.</span>
+          <span className="text-xs text-gray-500">© 2026 Ruppit. Todos los derechos reservados.</span>
          
         </div>
       </div>
