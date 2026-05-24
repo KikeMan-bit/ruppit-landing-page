@@ -95,7 +95,7 @@ export default function Hero() {
       </BlurFade>
 
       {/* Fade al fondo de la sección para transición suave */}
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-72 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none" />
 
     </section>
   );

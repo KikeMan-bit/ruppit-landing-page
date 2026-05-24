@@ -94,10 +94,10 @@ export function FeaturesPhone({ features, className }: Props) {
           className="relative flex items-center justify-center"
         >
           {/* Glow behind phone */}
-          <div className="absolute inset-0 rounded-full bg-primary/25 blur-3xl scale-75 pointer-events-none" />
+          <div className="absolute inset-0 rounded-full bg-primary/40 blur-3xl scale-125 pointer-events-none" />
 
           {/* Phone frame with animated screen */}
-          <div className="relative w-[180px] lg:w-[215px]">
+          <div className="relative w-[240px] lg:w-[320px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}

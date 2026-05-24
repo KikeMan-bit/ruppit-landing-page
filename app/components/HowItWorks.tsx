@@ -2,10 +2,11 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
+import { MapPin, Users, HandCoins, CarFront, Smartphone, Eye, ThumbsUp, Wallet } from "lucide-react"
 
 type Step = {
   number: string
-  emoji: string
+  icon: React.ReactNode
   title: string
   desc: string
 }
@@ -13,25 +14,25 @@ type Step = {
 const passengerSteps: Step[] = [
   {
     number: "01",
-    emoji: "📍",
+    icon: <MapPin size={24} />,
     title: "Ingresa tu destino",
     desc: "Abre Ruppit, escribe a dónde quieres ir y la app calcula la ruta al instante.",
   },
   {
     number: "02",
-    emoji: "👥",
+    icon: <Users size={24} />,
     title: "Elige cuántos viajan",
     desc: "¿Solo o en grupo? Selecciona el número de pasajeros para dividir el costo entre todos.",
   },
   {
     number: "03",
-    emoji: "💰",
+    icon: <HandCoins size={24} />,
     title: "Propón tu tarifa",
     desc: "Tú decides cuánto pagar. Pon el precio que consideres justo y lanza tu oferta.",
   },
   {
     number: "04",
-    emoji: "✅",
+    icon: <CarFront size={24} />,
     title: "Un conductor acepta",
     desc: "Un conductor acepta tu precio. Ve su perfil y el tiempo de llegada en tiempo real.",
   },
@@ -40,25 +41,25 @@ const passengerSteps: Step[] = [
 const driverSteps: Step[] = [
   {
     number: "01",
-    emoji: "📲",
+    icon: <Smartphone size={24} />,
     title: "Descarga la app",
     desc: "Regístrate, sube tus documentos y espera la verificación de identidad en minutos.",
   },
   {
     number: "02",
-    emoji: "👀",
+    icon: <Eye size={24} />,
     title: "Ve las ofertas",
     desc: "Explora los viajes disponibles cerca tuyo y ve la tarifa que propone cada pasajero.",
   },
   {
     number: "03",
-    emoji: "✅",
+    icon: <ThumbsUp size={24} />,
     title: "Acepta lo que te conviene",
     desc: "Solo tú decides qué viajes tomar. Sin presión ni asignaciones forzadas.",
   },
   {
     number: "04",
-    emoji: "💵",
+    icon: <Wallet size={24} />,
     title: "Cobra al finalizar",
     desc: "Recibe tu pago al terminar el viaje. Sin descuentos ocultos ni comisiones sorpresa.",
   },
@@ -147,7 +148,7 @@ export default function HowItWorks() {
             {/* Connecting dashed line — desktop only */}
             <div
               aria-hidden="true"
-              className="hidden lg:block absolute top-8 h-px border-t-2 border-dashed border-[#ffc300]/20"
+              className="hidden lg:block absolute top-8 h-px border-t-2 border-dashed border-[#000000]/20"
               style={{ left: "12.5%", right: "12.5%" }}
             />
 
@@ -165,9 +166,9 @@ export default function HowItWorks() {
                   <motion.div
                     whileHover={{ scale: 1.08 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="w-16 h-16 rounded-full bg-white border-2 border-[#ffc300]/20 flex items-center justify-center shadow-sm group-hover:border-[#ffc300]/50 group-hover:shadow-[0_0_20px_rgba(255,195,0,0.15)] transition-all duration-300"
+                    className="w-16 h-16 rounded-full bg-black border-2 border-[#000000] flex items-center justify-center shadow-sm group-hover:border-[#ffc300]/50 group-hover:shadow-[0_0_20px_rgba(255,195,0,0.15)] transition-all duration-300 text-[#ffc300]"
                   >
-                    <span className="text-2xl select-none">{step.emoji}</span>
+                    {step.icon}
                   </motion.div>
 
                   {/* Step number badge */}

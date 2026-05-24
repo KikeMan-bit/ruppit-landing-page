@@ -142,7 +142,7 @@ export default function Home() {
           </main>
         </div>
         <HowItWorks />
-        <AppShowcase />
+        {/* <AppShowcase /> */}
         <Features />
         {/* <Safety /> */}
         <FAQ />
