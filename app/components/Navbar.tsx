@@ -5,45 +5,39 @@ import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 
-const DARK_BG_ROUTES = ["/conductores", "/driver"]
-
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrollY, setScrollY] = useState(0)
   const pathname = usePathname()
   const isHome = pathname === "/"
-  const startsOnDark = DARK_BG_ROUTES.some((r) => pathname.startsWith(r))
 
   useEffect(() => {
-    const threshold = startsOnDark ? window.innerHeight * 0.85 : 20
-    const onScroll = () => setScrolled(window.scrollY > threshold)
+    const onScroll = () => setScrollY(window.scrollY)
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
-  }, [startsOnDark])
+  }, [])
 
-  const linkClass =
-    scrolled || !startsOnDark
-      ? "text-gray-600 hover:text-black"
-      : "text-white/80 hover:text-white"
+  const heroHeight = typeof window !== "undefined" ? window.innerHeight * 0.9 : 700
+
+  const pastHero = isHome && scrollY > heroHeight
+  const scrolled = scrollY > 20
+
+  const bgClass = pastHero
+    ? "bg-white/90 backdrop-blur-md shadow-sm"
+    : scrolled
+    ? "bg-black/90 backdrop-blur-md "
+    : "bg-transparent"
+
+  const linkClass = pastHero
+    ? "text-gray-600 hover:text-black"
+    : "text-white/80 hover:text-white"
+
+  const logo = pastHero ? "/logo.webp" : "/logo-sec.webp"
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm"
-          : startsOnDark
-          ? "bg-black"
-          : "bg-transparent"
-      }`}
-    >
+    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${bgClass}`}>
       <nav className="flex items-center justify-between px-6 md:px-8 py-4 w-full max-w-5xl mx-auto">
         <Link href="/">
-          <Image
-            src={!scrolled && startsOnDark ? "/logo-sec.webp" : "/logo.webp"}
-            alt="Ruppit"
-            width={100}
-            height={100}
-            priority
-          />
+          <Image src={logo} alt="Ruppit" width={100} height={100} priority />
         </Link>
         <div className="flex items-center gap-3">
           <Link href="/" className={`text-sm font-medium transition-colors min-h-[44px] flex items-center px-3 ${linkClass}`}>

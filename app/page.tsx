@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
 import AppShowcase from "./components/AppShowcase";
-import ForDrivers from "./components/ForDrivers";
 import Safety from "./components/Safety";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
@@ -135,9 +134,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="min-h-screen flex flex-col">
-        <div className="bg-gradient-to-b from-[#fff8d6] to-white">
+        <div className="bg-black">
           <Navbar />
-          <div className="pt-16" />
+          <div className="" />
           <main>
             <Hero />
           </main>
@@ -145,8 +144,7 @@ export default function Home() {
         <HowItWorks />
         <AppShowcase />
         <Features />
-        <Safety />
-        <ForDrivers />
+        {/* <Safety /> */}
         <FAQ />
         <Footer />
       </div>

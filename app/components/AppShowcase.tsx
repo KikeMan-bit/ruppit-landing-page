@@ -1,8 +1,8 @@
 "use client"
 
 import { motion } from "motion/react"
-import { Android } from "@/components/ui/android"
 import { Sparkles } from "lucide-react"
+import Image from "next/image"
 
 const points = [
   {
@@ -27,7 +27,7 @@ export default function AppShowcase() {
     <section className="w-full py-20 sm:py-28 px-4 sm:px-6 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* Left — phone + decoration */}
+        {/* Left — illustration + decoration */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -35,38 +35,29 @@ export default function AppShowcase() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex justify-center relative"
         >
-          {/* Yellow glow blob */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-primary/25 blur-3xl pointer-events-none" />
-
           {/* Sparkle decorations */}
           <motion.div
             animate={{ rotate: [0, 15, -10, 0], scale: [1, 1.15, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-6 right-12 text-primary"
+            className="absolute top-4 right-6 text-primary"
           >
             <Sparkles size={22} />
           </motion.div>
           <motion.div
             animate={{ rotate: [0, -12, 8, 0], scale: [1, 1.1, 1] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-16 left-8 text-primary/60"
+            className="absolute top-1/3 left-2 text-primary/50"
           >
             <Sparkles size={14} />
           </motion.div>
 
-          {/* Floating badge */}
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-2 right-4 lg:right-0 bg-black text-white text-xs font-semibold px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2 z-10"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Conductor en camino · 3 min
-          </motion.div>
-
-          <Android
-            src="/rupi-maps-3.webp"
-            className="relative w-[220px] sm:w-[260px] h-auto drop-shadow-2xl"
+          <Image
+            src="/illustator/passenger.png"
+            alt="Pasajero usando Ruppit"
+            width={480}
+            height={480}
+            className="relative w-[300px] sm:w-[380px] lg:w-[440px] h-auto select-none"
+            priority
           />
         </motion.div>
 

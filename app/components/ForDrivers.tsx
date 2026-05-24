@@ -84,17 +84,15 @@ export default function ForDrivers() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: 0.45 }}
             >
-              <Link href="/conductores">
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                  className="inline-flex items-center gap-2 bg-[#ffc300] hover:bg-[#e6a800] text-black font-semibold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-[#ffc300]/30 transition-colors duration-200"
-                >
-                  Quiero ser conductor
-                  <CheckCircle2 size={16} />
-                </motion.button>
-              </Link>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                className="inline-flex items-center gap-2 bg-[#ffc300] hover:bg-[#e6a800] text-black font-semibold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-[#ffc300]/30 transition-colors duration-200"
+              >
+                Quiero ser conductor
+                <CheckCircle2 size={16} />
+              </motion.button>
             </motion.div>
           </div>
 

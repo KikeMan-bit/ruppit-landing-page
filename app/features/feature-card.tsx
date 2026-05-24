@@ -1,6 +1,7 @@
 import { FeatureDetails } from "./feature-details";
 import type { Feature } from "./features";
-import Image from "next/image";
+import { Android } from "@/components/ui/android";
+import { cn } from "@/lib/utils";
 
 type FeatureCardProps = {
   feature: Feature;
@@ -9,10 +10,15 @@ type FeatureCardProps = {
 
 export function FeatureCard({ feature, isActive }: FeatureCardProps) {
   return (
-    <div className="flex w-[var(--carousel-item-width)] flex-col items-center gap-5 px-2 py-6">
+    <div
+      className={cn(
+        "flex w-[var(--carousel-item-width)] flex-col items-center gap-5 px-2 py-6 transition-all duration-300",
+        isActive ? "opacity-100 scale-100" : "opacity-60 scale-95",
+      )}
+    >
       <FeatureDetails feature={feature} isActive={isActive} />
-      <div className="bg-card w-full rounded-lg border p-8 pb-0">
-        <Image src={feature.image} alt="App Image" width={304} height={445} />
+      <div className="w-full flex justify-center">
+        <Android src={feature.image} className="w-[150px] h-auto drop-shadow-xl" />
       </div>
     </div>
   );

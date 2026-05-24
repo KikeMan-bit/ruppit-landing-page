@@ -56,30 +56,24 @@ function StoreButton({ store }: { store: "apple" | "google" }) {
 
 export default function Footer() {
   return (
-    <footer className="w-full mt-20">
+    <footer className="w-full bg-black mt-20">
       <div className="max-w-5xl mx-auto px-6 md:px-8 pb-10">
         <BlurFade delay={0.1} inView>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-12 border-t border-gray-300/40">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-12 border-t border-white/10">
             {/* Brand */}
             <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-4">
-              <Image
-                src="/logo.webp"
-                alt="Ruppit"
-                width={100}
-                height={100}
-              />
+              <Image src="/logo-sec.webp" alt="Ruppit" width={100} height={100} />
               <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
                 Tu grupo, tu precio, tu viaje. Conectamos pasajeros con conductores de forma justa, rápida y transparente.
               </p>
-            
             </div>
 
             {/* Ruppit links */}
             <div className="flex flex-col gap-3">
-              <h3 className="font-semibold text-gray-900 text-sm">Ruppit</h3>
+              <h3 className="font-semibold text-white text-sm">Ruppit</h3>
               <nav className="flex flex-col gap-2">
                 {["Funciones", "Cómo funciona", "Testimonios"].map((link) => (
-                  <a key={link} href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+                  <a key={link} href="#" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">
                     {link}
                   </a>
                 ))}
@@ -88,12 +82,12 @@ export default function Footer() {
 
             {/* Legal links */}
             <div className="flex flex-col gap-3">
-              <h3 className="font-semibold text-gray-900 text-sm">Legal</h3>
+              <h3 className="font-semibold text-white text-sm">Legal</h3>
               <nav className="flex flex-col gap-2">
-                <Link href="/terms-and-conditions" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+                <Link href="/terms-and-conditions" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">
                   Términos y Condiciones
                 </Link>
-                <Link href="/privacy-policy" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+                <Link href="/privacy-policy" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">
                   Política de Privacidad
                 </Link>
               </nav>
@@ -101,14 +95,14 @@ export default function Footer() {
 
             {/* Social links */}
             <div className="flex flex-col gap-3">
-              <h3 className="font-semibold text-gray-900 text-sm">Síguenos</h3>
+              <h3 className="font-semibold text-white text-sm">Síguenos</h3>
               <nav className="flex flex-col gap-2">
                 {[
                   { label: "Instagram", Icon: InstagramIcon },
                   { label: "Twitter", Icon: XIcon },
                   { label: "LinkedIn", Icon: LinkedInIcon },
                 ].map(({ label, Icon }) => (
-                  <a key={label} href="#" className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 transition-colors">
+                  <a key={label} href="#" className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-300 transition-colors">
                     <Icon />
                     {label}
                   </a>
@@ -119,9 +113,8 @@ export default function Footer() {
         </BlurFade>
 
         {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-3 pt-4 border-t border-gray-300/40">
-          <span className="text-xs text-gray-500">© 2026 Ruppit. Todos los derechos reservados.</span>
-         
+        <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-3 pt-4 border-t border-white/10">
+          <span className="text-xs text-gray-600">© 2026 Ruppit. Todos los derechos reservados.</span>
         </div>
       </div>
     </footer>
