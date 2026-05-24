@@ -15,10 +15,10 @@ const avatars = [
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center text-center px-4 sm:px-6 pt-10 pb-0 flex-1 overflow-hidden">
-      <Particles className="absolute inset-0 pointer-events-none" quantity={30} color="#b121ff" size={0.6} />
+      <Particles className="absolute inset-0 pointer-events-none" quantity={60} color="#ffc300" size={0.5} />
       {/* Badge */}
       <BlurFade delay={0.1} direction="up">
-        <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/70 backdrop-blur-sm border border-white/60 rounded-full pl-2 pr-4 sm:pr-5 py-1.5 text-xs sm:text-sm mb-6 sm:mb-8 shadow-sm">
+        <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/80 backdrop-blur-sm border border-primary/30 rounded-full pl-2 pr-4 sm:pr-5 py-1.5 text-xs sm:text-sm mb-6 sm:mb-8 shadow-md shadow-primary/10">
           <AvatarCircles
             avatarUrls={avatars}
             className="[&_img]:h-7 [&_img]:w-7 sm:[&_img]:h-8 sm:[&_img]:w-8 -space-x-3"
@@ -39,24 +39,24 @@ export default function Hero() {
         <WordRotate
           words={["proponer.", "conectar.", "ahorrar.", "llegar."]}
           duration={2000}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold italic text-[#b121ff] leading-[1.05] tracking-tight mb-4 sm:mb-5"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold italic text-primary leading-[1.05] tracking-tight mb-4 sm:mb-5"
         />
       </BlurFade>
 
       {/* Subtext */}
       <BlurFade delay={0.4} direction="up">
-        <p className="text-black/80 text-sm md:text-base max-w-[280px] sm:max-w-md leading-5 mb-6 sm:mb-7">
-          Elige cuántos pasajeros viajan contigo, propón la tarifa y conecta con
-          conductores que aceptan tu oferta. Sin precios impuestos, sin sorpresas.
+        <p className="text-gray-500 text-sm md:text-base max-w-[280px] sm:max-w-md leading-relaxed mb-6 sm:mb-7">
+          La app de movilidad para provincias de Bolivia. Elige cuántos pasajeros van,
+          propón la tarifa y págala entre todos. Conductores verificados, precio justo.
         </p>
       </BlurFade>
 
       {/* CTA */}
       <BlurFade delay={0.5} direction="up">
         <ShimmerButton
-          background="#b121ff"
-          shimmerColor="#d97aff"
-          className="text-sm font-medium px-7 sm:px-8 py-3"
+          background="#ffc300"
+          shimmerColor="#ffe066"
+          className="text-sm font-medium px-7 sm:px-8 py-3 text-black"
         >
           Próximamente
         </ShimmerButton>
@@ -72,7 +72,7 @@ export default function Hero() {
           priority
           className="w-[220px] sm:w-[280px] md:w-[320px] h-auto"
         /> */}
-        <Android src="/rupi-maps-3.webp" className="w-[220px] sm:w-[280px] md:w-[320px] h-auto" />
+        <Android src="/rupi-maps-3.webp" className="w-[220px] sm:w-[280px] md:w-[320px] h-auto drop-shadow-2xl" />
 
       </div>
     </section>

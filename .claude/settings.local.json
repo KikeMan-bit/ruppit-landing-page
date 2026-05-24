@@ -15,7 +15,8 @@
       "Bash(firebase deploy *)",
       "Bash(pnpm dlx *)",
       "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\Carlos\\\\Documents\\\\Coudin\\\\rupi-landing-page\" -Recurse -Force -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch 'node_modules|\\\\.next|\\\\.git|dist|build' } | Select-Object -ExpandProperty FullName | Sort-Object)",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Bash(npx tsc *)"
     ]
   }
 }

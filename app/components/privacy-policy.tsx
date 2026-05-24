@@ -187,8 +187,8 @@ export default function PrivacyPolicy() {
         </ul>
         <p>
           Para ejercer cualquiera de estos derechos escríbenos a{" "}
-          <a href="mailto:privacidad@Ruppit.app" className="text-primary underline underline-offset-4">
-            privacidad@ruppit.app
+          <a href="mailto:soporte@ruppit.com" className="text-primary underline underline-offset-4">
+            soporte@ruppit.com
           </a>
           .
         </p>
@@ -209,8 +209,8 @@ export default function PrivacyPolicy() {
           <strong>Ruppit</strong>
           <br />
           Correo:{" "}
-          <a href="mailto:privacidad@Ruppit.app" className="text-primary underline underline-offset-4">
-            privacidad@Ruppit.app
+          <a href="mailto:soporte@ruppit.com" className="text-primary underline underline-offset-4">
+            soporte@ruppit.com
           </a>
         </p>
       </Section>

@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import HowItWorks from "./components/HowItWorks";
+import AppShowcase from "./components/AppShowcase";
+import ForDrivers from "./components/ForDrivers";
+import Safety from "./components/Safety";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import { Features } from "./features/features";
 
 export const metadata: Metadata = {
   alternates: {
@@ -29,7 +34,7 @@ const jsonLd = {
         "Ruppit es una app de movilidad compartida donde tú propones el precio de tu viaje. Conectamos pasajeros con conductores verificados en Bolivia.",
       contactPoint: {
         "@type": "ContactPoint",
-        email: "privacidad@ruppit.app",
+        email: "soporte@ruppit.com",
         contactType: "customer service",
         availableLanguage: "Spanish",
       },
@@ -130,13 +135,18 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="min-h-screen flex flex-col">
-        <div className="bg-gradient-to-b from-[#e8b4ff] to-white">
+        <div className="bg-gradient-to-b from-[#fff8d6] to-white">
           <Navbar />
           <div className="pt-16" />
           <main>
             <Hero />
           </main>
         </div>
+        <HowItWorks />
+        <AppShowcase />
+        <Features />
+        <Safety />
+        <ForDrivers />
         <FAQ />
         <Footer />
       </div>

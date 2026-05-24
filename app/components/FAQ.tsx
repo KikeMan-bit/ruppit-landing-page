@@ -51,7 +51,8 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="w-full max-w-2xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+    <section className="w-full px-4 sm:px-6 py-16 sm:py-24 bg-gray-50">
+      <div className="max-w-2xl mx-auto">
       <BlurFade delay={0.1} direction="up">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-2">
           Preguntas frecuentes
@@ -70,15 +71,15 @@ export default function FAQ() {
                 className="w-full flex items-start gap-4 py-5 text-left group"
                 onClick={() => setOpen(isOpen ? null : i)}
               >
-                <span className="text-xs font-mono text-[#b121ff] mt-1 w-6 shrink-0">
+                <span className="text-xs font-mono text-black mt-1 w-6 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="flex-1 text-sm sm:text-base font-medium text-gray-800 group-hover:text-[#b121ff] transition-colors">
+                <span className="flex-1 text-sm sm:text-base font-medium text-gray-800 group-hover:text-black transition-colors">
                   {faq.question}
                 </span>
                 <ChevronDown
                   className={`shrink-0 mt-0.5 text-gray-400 transition-transform duration-300 ${
-                    isOpen ? "rotate-180 text-[#b121ff]" : ""
+                    isOpen ? "rotate-180 text-black" : ""
                   }`}
                   size={18}
                 />
@@ -95,6 +96,7 @@ export default function FAQ() {
             </BlurFade>
           );
         })}
+      </div>
       </div>
     </section>
   );
