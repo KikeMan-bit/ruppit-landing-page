@@ -63,7 +63,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-4">
               <Image src="/logo-sec.webp" alt="Ruppit" width={100} height={100} />
-              <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
+              <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
                 Tu grupo, tu precio, tu viaje. Conectamos pasajeros con conductores de forma justa, rápida y transparente.
               </p>
             </div>
@@ -73,7 +73,7 @@ export default function Footer() {
               <h3 className="font-semibold text-white text-sm">Ruppit</h3>
               <nav className="flex flex-col gap-2">
                 {["Funciones", "Cómo funciona", "Testimonios"].map((link) => (
-                  <a key={link} href="#" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">
+                  <a key={link} href="#" className="text-sm text-gray-400 hover:text-gray-300 transition-colors">
                     {link}
                   </a>
                 ))}
@@ -84,11 +84,14 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <h3 className="font-semibold text-white text-sm">Legal</h3>
               <nav className="flex flex-col gap-2">
-                <Link href="/terms-and-conditions" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">
+                <Link href="/terms-and-conditions" className="text-sm text-gray-400 hover:text-gray-300 transition-colors">
                   Términos y Condiciones
                 </Link>
-                <Link href="/privacy-policy" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">
+                <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-gray-300 transition-colors">
                   Política de Privacidad
+                </Link>
+                <Link href="/delete-account" className="text-sm text-gray-400 hover:text-gray-300 transition-colors">
+                  Eliminar cuenta
                 </Link>
               </nav>
             </div>
@@ -102,7 +105,7 @@ export default function Footer() {
                   { label: "Twitter", Icon: XIcon },
                   { label: "LinkedIn", Icon: LinkedInIcon },
                 ].map(({ label, Icon }) => (
-                  <a key={label} href="#" className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-300 transition-colors">
+                  <a key={label} href="#" className="flex items-center gap-2 text-sm text-gray-400 hover:text-gray-300 transition-colors">
                     <Icon />
                     {label}
                   </a>
@@ -114,7 +117,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-3 pt-4 border-t border-white/10">
-          <span className="text-xs text-gray-600">© 2026 Ruppit. Todos los derechos reservados.</span>
+          <span className="text-xs text-gray-400">© 2026 Ruppit. Todos los derechos reservados.</span>
         </div>
       </div>
     </footer>

@@ -54,7 +54,7 @@ export default function Hero() {
 
       {/* Subtext */}
       <BlurFade delay={0.4} direction="up">
-        <p className="text-gray-500 text-sm md:text-base max-w-[280px] sm:max-w-md leading-relaxed mb-6 sm:mb-7">
+        <p className="text-white/80 text-sm md:text-base max-w-[280px] sm:max-w-md leading-relaxed mb-6 sm:mb-7">
           La app de movilidad para provincias de Bolivia. Elige cuántos pasajeros van,
           propón la tarifa y págala entre todos. Conductores verificados, precio justo.
         </p>
@@ -95,7 +95,7 @@ export default function Hero() {
       </BlurFade>
 
       {/* Fade al fondo de la sección para transición suave */}
-      <div className="absolute bottom-0 inset-x-0 h-72 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-[40rem] bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
 
     </section>
   );

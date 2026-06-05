@@ -3,11 +3,12 @@
 import Link from "next/link"
 import { motion, AnimatePresence } from "motion/react"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 import { useState } from "react"
 import {
   CarFront, Clock3, TrendingUp, ShieldCheck,
   CheckCircle2, ChevronDown, ArrowRight,
-  Smartphone, BadgeCheck,
+  Smartphone, BadgeCheck, UserPlus, Wallet,
 } from "lucide-react"
 
 /* ─────────────────── DATA ─────────────────── */
@@ -22,10 +23,10 @@ const benefits = [
 ]
 
 const steps = [
-  { emoji: "📲", number: "01", title: "Descarga la app",        desc: "Disponible para Android e iOS muy pronto." },
-  { emoji: "📋", number: "02", title: "Crea tu perfil",         desc: "Sube tu foto, documentos del vehículo e identidad." },
-  { emoji: "✅", number: "03", title: "Espera la verificación", desc: "Revisamos tu info en minutos y activamos tu cuenta." },
-  { emoji: "💵", number: "04", title: "Empieza a ganar",        desc: "Ve las ofertas cercanas y acepta las que te convengan." },
+  { icon: <Smartphone size={24} />, number: "01", title: "Descarga la app",        desc: "Disponible para Android e iOS muy pronto." },
+  { icon: <UserPlus size={24} />,   number: "02", title: "Crea tu perfil",         desc: "Sube tu foto, documentos del vehículo e identidad." },
+  { icon: <BadgeCheck size={24} />, number: "03", title: "Espera la verificación", desc: "Revisamos tu info en minutos y activamos tu cuenta." },
+  { icon: <Wallet size={24} />,     number: "04", title: "Empieza a ganar",        desc: "Ve las ofertas cercanas y acepta las que te convengan." },
 ]
 
 const requirements = [
@@ -123,7 +124,7 @@ export default function DriverLanding() {
             {[
               { label: "Viajes disponibles ahora", value: "12",     sub: "cerca de ti",           color: "from-[#ffc300]/20 to-[#ffc300]/5" },
               { label: "Tiempo promedio de espera", value: "3 min", sub: "para tu primer viaje",  color: "from-white/10 to-white/5" },
-              { label: "Tarifa promedio en Camiri", value: "Bs. 18",sub: "por viaje corto",        color: "from-white/10 to-white/5" },
+              { label: "Tarifa promedio en Camiri", value: "Bs. 5",sub: "por viaje corto",        color: "from-white/10 to-white/5" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -149,11 +150,11 @@ export default function DriverLanding() {
       </section>
 
       {/* ── BENEFITS ── */}
-      <section className="py-20 sm:py-28 px-6 sm:px-10 bg-black">
+      <section className="py-20 sm:py-28 px-6 sm:px-10 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-[#ffc300] mb-3 block">Beneficios</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">¿Por qué manejar con Ruppit?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">¿Por qué manejar con Ruppit?</h2>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -164,12 +165,12 @@ export default function DriverLanding() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="group p-6 rounded-2xl border border-white/8 hover:border-[#ffc300]/30 hover:shadow-lg hover:shadow-[#ffc300]/10 transition-all duration-300 bg-white/5"
+                className="group p-6 rounded-2xl border border-gray-100 hover:border-[#ffc300]/40 hover:shadow-lg hover:shadow-[#ffc300]/10 transition-all duration-300 bg-gray-50"
               >
-                <div className="w-11 h-11 rounded-xl bg-white/8 flex items-center justify-center mb-4 group-hover:bg-[#ffc300]/15 transition-colors">
-                  <b.icon size={20} className="text-[#ffc300]" />
+                <div className="w-11 h-11 rounded-xl bg-black flex items-center justify-center mb-4 group-hover:bg-[#ffc300] transition-colors">
+                  <b.icon size={20} className="text-[#ffc300] group-hover:text-black transition-colors" />
                 </div>
-                <h3 className="font-semibold text-white mb-1.5 text-sm">{b.title}</h3>
+                <h3 className="font-semibold text-gray-900 mb-1.5 text-sm">{b.title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed">{b.desc}</p>
               </motion.div>
             ))}
@@ -198,9 +199,9 @@ export default function DriverLanding() {
                 <div className="relative mb-5 z-10">
                   <motion.div
                     whileHover={{ scale: 1.08 }}
-                    className="w-16 h-16 rounded-full bg-white/8 border-2 border-[#ffc300]/20 flex items-center justify-center shadow-sm group-hover:border-[#ffc300]/50 group-hover:shadow-[0_0_20px_rgba(255,195,0,0.15)] transition-all duration-300"
+                    className="w-16 h-16 rounded-full bg-white/8 border-2 border-[#ffc300]/20 flex items-center justify-center shadow-sm group-hover:border-[#ffc300]/50 group-hover:shadow-[0_0_20px_rgba(255,195,0,0.15)] transition-all duration-300 text-[#ffc300]"
                   >
-                    <span className="text-2xl">{step.emoji}</span>
+                    {step.icon}
                   </motion.div>
                   <div className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#ffc300] flex items-center justify-center ring-2 ring-black">
                     <span className="text-black text-[9px] font-black">{step.number}</span>
@@ -220,11 +221,11 @@ export default function DriverLanding() {
       </section>
 
       {/* ── REQUIREMENTS ── */}
-      <section className="py-20 sm:py-24 px-6 sm:px-10 bg-black border-t border-white/5">
+      <section className="py-20 sm:py-24 px-6 sm:px-10 bg-white">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-[#ffc300] mb-3 block">Requisitos</span>
-            <h2 className="text-3xl font-bold text-white tracking-tight mb-3">¿Qué necesitas?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 tracking-tight mb-3">¿Qué necesitas?</h2>
             <p className="text-gray-500 text-sm">Pocos requisitos, proceso rápido.</p>
           </motion.div>
           <div className="flex flex-col gap-3 text-left">
@@ -234,10 +235,10 @@ export default function DriverLanding() {
                 initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.35 }}
-                className="flex items-center gap-3 bg-white/5 rounded-xl px-5 py-3.5 border border-white/8"
+                className="flex items-center gap-3 bg-gray-50 rounded-xl px-5 py-3.5 border border-gray-100"
               >
                 <CheckCircle2 size={16} className="text-[#ffc300] shrink-0" />
-                <span className="text-sm text-gray-300">{req}</span>
+                <span className="text-sm text-gray-700">{req}</span>
               </motion.div>
             ))}
           </div>
@@ -283,15 +284,7 @@ export default function DriverLanding() {
         </motion.div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="bg-black border-t border-white/5 px-6 py-6 text-center">
-        <div className="flex items-center justify-center gap-6 flex-wrap text-xs text-gray-600">
-          <Link href="/" className="hover:text-gray-400 transition-colors">Inicio</Link>
-          <Link href="/privacy-policy" className="hover:text-gray-400 transition-colors">Privacidad</Link>
-          <Link href="/terms-and-conditions" className="hover:text-gray-400 transition-colors">Términos</Link>
-        </div>
-        <p className="text-gray-700 text-xs mt-4">© 2026 Ruppit. Todos los derechos reservados.</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

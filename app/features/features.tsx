@@ -57,7 +57,7 @@ export function Features() {
         </h2>
       </BlurFade>
       <BlurFade inView delay={0.2} direction="up">
-        <p className="mb-3 max-w-lg text-center leading-6 tracking-tight sm:text-xl lg:mb-8 text-gray-400">
+        <p className="mb-3 max-w-lg text-center leading-6 tracking-tight sm:text-xl lg:mb-8 text-gray-200">
           Rupi te da el control total: elige tu grupo, negocia el precio y guarda tus rutas favoritas. Viajar nunca fue
           tan fácil.
         </p>
