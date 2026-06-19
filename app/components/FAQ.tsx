@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const faqs = [
@@ -28,7 +29,7 @@ const faqs = [
   {
     question: "¿En qué ciudades estará disponible Ruppit?",
     answer:
-      "Ruppit nace en Camiri, Bolivia. Desde ahí comenzamos a transformar la manera en que las personas se mueven, con planes de expansión a más ciudades en el corto plazo.",
+      "Ruppit nace en las provincias de Bolivia, comenzando en Camiri como ciudad piloto. Desde ahí transformamos la manera en que las personas se mueven, con expansión a más provincias y ciudades.",
   },
   {
     question: "¿Cuándo estará disponible la app?",
@@ -53,50 +54,83 @@ export default function FAQ() {
   return (
     <section className="w-full px-4 sm:px-6 py-16 sm:py-24 bg-gray-50">
       <div className="max-w-2xl mx-auto">
-      <BlurFade delay={0.1} direction="up">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-2">
-          Preguntas frecuentes
-        </h2>
-        <p className="text-gray-500 text-center mb-12">
-          Todo lo que necesitas saber sobre Ruppit.
-        </p>
-      </BlurFade>
+        <BlurFade delay={0.1} direction="up">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-2">
+            Preguntas frecuentes
+          </h2>
+          <p className="text-gray-500 text-center mb-12">
+            Todo lo que necesitas saber sobre Ruppit.
+          </p>
+        </BlurFade>
 
-      <div className="divide-y divide-gray-200">
-        {faqs.map((faq, i) => {
-          const isOpen = open === i;
-          return (
-            <BlurFade key={i} delay={0.1 + i * 0.05} direction="up">
-              <button
-                className="w-full flex items-start gap-4 py-5 text-left group"
-                onClick={() => setOpen(isOpen ? null : i)}
-              >
-                <span className="text-xs font-mono text-black mt-1 w-6 shrink-0">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="flex-1 text-sm sm:text-base font-medium text-gray-800 group-hover:text-black transition-colors">
-                  {faq.question}
-                </span>
-                <ChevronDown
-                  className={`shrink-0 mt-0.5 text-gray-400 transition-transform duration-300 ${
-                    isOpen ? "rotate-180 text-black" : ""
-                  }`}
-                  size={18}
-                />
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  isOpen ? "max-h-48 pb-5" : "max-h-0"
-                }`}
-              >
-                <p className="text-sm text-gray-500 leading-relaxed pl-10">
-                  {faq.answer}
-                </p>
-              </div>
-            </BlurFade>
-          );
-        })}
-      </div>
+        <div className="flex flex-col">
+          {faqs.map((faq, i) => {
+            const isOpen = open === i;
+            return (
+              <BlurFade key={i} delay={0.1 + i * 0.05} direction="up">
+                <div className="relative border-b border-gray-200">
+                  {/* Highlight que se desliza a la pregunta abierta */}
+                  {isOpen && (
+                    <motion.div
+                      layoutId="faq-highlight"
+                      className="absolute inset-0 -mx-3 rounded-xl bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] ring-1 ring-black/5"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                    />
+                  )}
+
+                  <button
+                    className="relative w-full flex items-start gap-4 py-5 text-left group"
+                    onClick={() => setOpen(isOpen ? null : i)}
+                  >
+                    <span
+                      className={`text-xs font-mono mt-1 w-6 shrink-0 transition-colors duration-300 ${
+                        isOpen ? "text-primary" : "text-black"
+                      }`}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="flex-1 text-sm sm:text-base font-medium text-gray-800 group-hover:text-black transition-colors">
+                      {faq.question}
+                    </span>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                      className="shrink-0 mt-0.5"
+                    >
+                      <ChevronDown
+                        size={18}
+                        className={isOpen ? "text-primary" : "text-gray-400"}
+                      />
+                    </motion.span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                        className="relative overflow-hidden"
+                      >
+                        <motion.p
+                          initial={{ y: -8 }}
+                          animate={{ y: 0 }}
+                          exit={{ y: -8 }}
+                          transition={{ duration: 0.3 }}
+                          className="text-sm text-gray-500 leading-relaxed pl-10 pb-5"
+                        >
+                          {faq.answer}
+                        </motion.p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </BlurFade>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

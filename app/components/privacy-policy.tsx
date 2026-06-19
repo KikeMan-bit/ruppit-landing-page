@@ -2,208 +2,402 @@ export default function PrivacyPolicy() {
   return (
     <main className="mx-auto mt-16 w-full max-w-3xl px-6 pb-24">
       <h1 className="mb-2 text-4xl font-medium tracking-tight sm:text-5xl">Política de Privacidad</h1>
-      <p className="text-muted-foreground mb-12 text-sm">Última actualización: 4 de mayo de 2026</p>
+      <p className="text-muted-foreground mb-12 text-sm">Versión vigente: junio de 2026</p>
 
       <Section title="1. Introducción">
         <p>
-          Ruppit («nosotros», «la app») es una plataforma de transporte que conecta pasajeros con conductores
-          independientes. Esta Política de Privacidad explica qué datos personales recopilamos, por qué los
-          recopilamos y cómo los usamos cuando utilizas nuestra aplicación móvil o sitio web.
+          Ruppit (en adelante, «Ruppit», «nosotros» o «la plataforma») es una plataforma tecnológica de intermediación
+          que conecta pasajeros con conductores independientes en Bolivia. Operamos a través de la aplicación móvil
+          Ruppit, disponible en iOS y Android, y del sitio web <strong>ruppit.com</strong>.
         </p>
         <p>
-          Al crear una cuenta en Ruppit aceptas las prácticas descritas en este documento. Si no estás de acuerdo,
-          por favor no uses la aplicación.
+          Esta Política de Privacidad tiene como propósito informarle de manera clara y transparente sobre qué datos
+          personales recopilamos, para qué los usamos, con quién los compartimos, cuánto tiempo los conservamos y
+          cuáles son sus derechos sobre ellos.
         </p>
+        <p>
+          Al registrarse en la Aplicación o al continuar usándola, usted declara haber leído y comprendido esta
+          Política de Privacidad y acepta el tratamiento de sus datos en los términos aquí descritos.
+        </p>
+        <Callout>Ruppit no vende datos personales de sus usuarios a terceros bajo ninguna circunstancia.</Callout>
       </Section>
 
       <Section title="2. Datos que recopilamos">
-        <Subsection title="2.1 Datos que nos proporcionas directamente">
+        <Subsection title="2.1 Datos de pasajeros">
+          <p>
+            <strong>Datos de registro e identidad:</strong>
+          </p>
           <ul>
-            <li>
-              <strong>Nombre y apellido</strong> — para identificarte dentro de la plataforma.
-            </li>
-            <li>
-              <strong>Número de teléfono</strong> — para verificar tu cuenta y contactarte en caso necesario.
-            </li>
-            <li>
-              <strong>Correo electrónico</strong> — para el acceso a tu cuenta y comunicaciones importantes.
-            </li>
-            <li>
-              <strong>Foto de perfil</strong> — opcional; puede tomarse desde la cámara o cargarse desde tu galería.
-            </li>
+            <li>Nombre completo.</li>
+            <li>Número de teléfono móvil.</li>
+            <li>Foto de perfil (opcional, proporcionada voluntariamente).</li>
           </ul>
-        </Subsection>
-
-        <Subsection title="2.2 Datos generados al usar el servicio">
+          <p>
+            <strong>Datos de uso del servicio:</strong>
+          </p>
           <ul>
             <li>
-              <strong>Historial de viajes</strong> — origen, destino, tarifa acordada, fecha y hora, conductor
+              Historial de viajes: punto de origen, punto de destino, tarifa acordada, fecha y hora, y conductor
               asignado.
             </li>
+            <li>Ubicaciones guardadas por el Usuario, como «Casa», «Trabajo» u otras denominaciones personalizadas.</li>
+            <li>Preferencias de viaje seleccionadas al momento de solicitar un servicio.</li>
+          </ul>
+          <p>
+            <strong>Datos técnicos y de uso de la Aplicación:</strong>
+          </p>
+          <ul>
+            <li>Modelo del dispositivo móvil y sistema operativo.</li>
+            <li>Versión de la Aplicación instalada.</li>
             <li>
-              <strong>Ubicaciones guardadas</strong> — las direcciones que marques como «Casa», «Trabajo» u otras.
+              Datos de uso: pantallas visitadas, botones utilizados y tiempos de sesión. Esta información se utiliza
+              únicamente para mejorar el funcionamiento de la Aplicación.
+            </li>
+          </ul>
+        </Subsection>
+
+        <Subsection title="2.2 Datos adicionales de conductores">
+          <p>Adicionalmente a los datos indicados en la sección 2.1, los conductores proporcionan:</p>
+          <ul>
+            <li>
+              <strong>Cédula de identidad boliviana</strong> — número y fotografía del documento, requerida para el
+              registro.
             </li>
             <li>
-              <strong>Información del dispositivo</strong> — modelo, sistema operativo y versión de la app (usados
-              para soporte técnico).
+              <strong>Fotografía del vehículo</strong> con el que operará en la plataforma.
             </li>
             <li>
-              <strong>Datos de uso</strong> — pantallas visitadas, botones presionados y tiempos de sesión
-              (análisis interno de la app).
+              <strong>Ruppit Code</strong> — para conductores en provincias de Bolivia bajo el sistema Ruppit Code, se asigna un
+              código alfanumérico único (formato AA##). En este caso la verificación documental se realiza únicamente
+              mediante la cédula de identidad del conductor.
             </li>
+            <li>Historial de viajes completados como conductor.</li>
+            <li>Calificaciones recibidas de pasajeros.</li>
+          </ul>
+        </Subsection>
+
+        <Subsection title="2.3 Datos que NO recopilamos">
+          <p>Ruppit no recopila:</p>
+          <ul>
+            <li>Datos bancarios, números de tarjeta de crédito o débito, ni cuentas bancarias.</li>
+            <li>Ubicación del Usuario cuando la Aplicación está cerrada o en segundo plano.</li>
+            <li>Información de contactos del dispositivo.</li>
+            <li>Datos de otras aplicaciones instaladas en el dispositivo.</li>
           </ul>
         </Subsection>
       </Section>
 
-      <Section title="3. Por qué pedimos acceso a tu ubicación">
+      <Section title="3. Permisos de ubicación">
+        <Subsection title="3.1 Cuándo accedemos a su ubicación">
+          <p>La Aplicación accede a la ubicación del dispositivo únicamente:</p>
+          <ul>
+            <li>Mientras la Aplicación está activa en primer plano (abierta y visible en pantalla).</li>
+            <li>Durante el transcurso de un viaje activo, aunque la Aplicación no esté en primer plano.</li>
+          </ul>
+          <Callout>
+            Ruppit no rastrea, no registra ni tiene acceso a la ubicación del Usuario cuando la Aplicación está
+            cerrada, minimizada fuera de un viaje activo o en segundo plano.
+          </Callout>
+        </Subsection>
+        <Subsection title="3.2 Para qué usamos su ubicación">
+          <ul>
+            <li>Mostrar conductores disponibles en las cercanías del pasajero.</li>
+            <li>Establecer y confirmar el punto de recogida del pasajero.</li>
+            <li>Permitir al conductor navegar hacia el punto de recogida y el destino.</li>
+            <li>Rastrear el trayecto del viaje en tiempo real.</li>
+            <li>Calcular la tarifa sugerida en función de la distancia y el recorrido estimado.</li>
+          </ul>
+        </Subsection>
+        <Subsection title="3.3 Cómo gestionamos los datos de ubicación">
+          <p>
+            La ubicación en tiempo real durante un viaje se utiliza exclusivamente para la prestación del servicio y{" "}
+            <strong>se elimina de nuestros sistemas activos al concluir el viaje.</strong> El historial de viajes
+            registra únicamente el origen y destino, no la ruta completa.
+          </p>
+          <p>
+            Puede revocar el permiso de ubicación en cualquier momento desde la configuración de su dispositivo.
+            Tenga en cuenta que esto impedirá el uso de las funciones principales de la Aplicación.
+          </p>
+        </Subsection>
+      </Section>
+
+      <Section title="4. Permisos de cámara">
         <Callout>
-          Ruppit te pedirá permiso de acceso a tu ubicación antes de solicitarlo al sistema operativo. Siempre puedes
-          denegarlo, aunque esto limitará las funciones principales de la app.
+          La Aplicación nunca activa la cámara de manera automática ni en segundo plano. El acceso ocurre únicamente
+          cuando el Usuario inicia de forma activa y voluntaria una acción que lo requiere.
         </Callout>
-        <p>Usamos tu ubicación para:</p>
+
+        <Subsection title="4.1 Usos para pasajeros">
+          <Table
+            headers={["Acción del usuario", "Uso de la cámara"]}
+            rows={[
+              [
+                "Configurar o actualizar foto de perfil",
+                "Permite tomar una fotografía o seleccionar una imagen de la galería.",
+              ],
+            ]}
+          />
+        </Subsection>
+
+        <Subsection title="4.2 Usos para conductores">
+          <Table
+            headers={["Acción del usuario", "Uso de la cámara"]}
+            rows={[
+              ["Configurar o actualizar foto de perfil", "Permite tomar o seleccionar una fotografía de perfil."],
+              [
+                "Verificación de identidad al registrarse",
+                "Permite fotografiar la cédula de identidad para el proceso de verificación.",
+              ],
+              [
+                "Registro de documentos del vehículo",
+                "Permite fotografiar los documentos vehiculares aplicables.",
+              ],
+              [
+                "Recarga de wallet Ruppit",
+                "Activa el escáner para leer el código QR y recargar el saldo de la wallet del conductor.",
+              ],
+            ]}
+          />
+        </Subsection>
+      </Section>
+
+      <Section title="5. Notificaciones push">
+        <p>Con su autorización, la Aplicación puede enviarle notificaciones push para:</p>
         <ul>
-          <li>
-            <strong>Mostrar conductores cercanos</strong> y calcular el tiempo estimado de llegada.
-          </li>
-          <li>
-            <strong>Establecer el punto de recogida</strong> sin que tengas que escribir la dirección manualmente.
-          </li>
-          <li>
-            <strong>Rastrear el trayecto en tiempo real</strong> para que tú y tus contactos de confianza puedan
-            seguir la ruta.
-          </li>
-          <li>
-            <strong>Calcular la tarifa sugerida</strong> con base en la distancia entre origen y destino.
-          </li>
+          <li>Informarle que un conductor ha aceptado su solicitud de viaje.</li>
+          <li>Notificarle que el conductor está en camino y el tiempo estimado de llegada.</li>
+          <li>Avisar el inicio y la finalización del viaje.</li>
+          <li>Comunicar actualizaciones importantes sobre el servicio o su cuenta.</li>
         </ul>
         <p>
-          <strong>Ubicación en segundo plano:</strong> Ruppit accede a tu ubicación únicamente mientras tienes la app
-          abierta y un viaje activo. No rastreamos tu posición cuando la app está cerrada ni fuera de un viaje.
+          Puede desactivar las notificaciones en cualquier momento desde la configuración de notificaciones de la
+          Aplicación o desde los ajustes de su dispositivo móvil.
         </p>
       </Section>
 
-      <Section title="4. Por qué pedimos acceso a tu cámara">
+      <Section title="6. Cómo usamos sus datos">
+        <Subsection title="6.1 Prestación del servicio">
+          <ul>
+            <li>Gestionar y mantener su cuenta de usuario.</li>
+            <li>Conectar pasajeros con conductores disponibles.</li>
+            <li>Facilitar la comunicación entre pasajero y conductor durante el viaje.</li>
+            <li>Procesar y registrar los viajes completados.</li>
+          </ul>
+        </Subsection>
+        <Subsection title="6.2 Seguridad y verificación">
+          <ul>
+            <li>Verificar la identidad de los conductores registrados.</li>
+            <li>Detectar y prevenir fraudes, abusos o conductas que violen nuestros Términos.</li>
+            <li>Investigar y resolver disputas reportadas entre usuarios.</li>
+          </ul>
+        </Subsection>
+        <Subsection title="6.3 Mejora del servicio">
+          <ul>
+            <li>Analizar datos de uso agregados y anonimizados para mejorar el funcionamiento de la Aplicación.</li>
+            <li>Identificar y corregir errores técnicos.</li>
+            <li>Desarrollar nuevas funcionalidades.</li>
+          </ul>
+        </Subsection>
+        <Subsection title="6.4 Cumplimiento legal">
+          <ul>
+            <li>Cumplir con obligaciones legales, reglamentarias o judiciales aplicables en Bolivia.</li>
+            <li>Conservar registros que puedan ser requeridos por autoridades competentes mediante orden judicial.</li>
+          </ul>
+        </Subsection>
+      </Section>
+
+      <Section title="7. Datos que compartimos con terceros">
         <Callout>
-          Ruppit te mostrará una explicación clara antes de solicitar acceso a tu cámara. El permiso es opcional y
-          puedes usar la app sin él.
+          Ruppit no vende, no alquila ni cede datos personales a terceros con fines publicitarios o comerciales.
         </Callout>
-        <p>Solicitamos acceso a la cámara exclusivamente para:</p>
+
+        <Subsection title="7.1 Con conductores">
+          <p>Durante el transcurso de un viaje, el conductor recibe:</p>
+          <ul>
+            <li>Nombre del pasajero.</li>
+            <li>Foto de perfil del pasajero (si el pasajero ha configurado una).</li>
+            <li>Ubicación del punto de recogida.</li>
+          </ul>
+        </Subsection>
+
+        <Subsection title="7.2 Con proveedores de servicios de mapas">
+          <p>
+            Para calcular rutas y rastrear el trayecto del viaje, la Aplicación utiliza servicios de mapas de terceros.
+            A estos proveedores se les comparten <strong>únicamente los datos de ubicación estrictamente necesarios</strong>{" "}
+            para la ruta activa. No se comparte información de identidad del usuario.
+          </p>
+        </Subsection>
+
+        <Subsection title="7.3 Con Banco Económico (pagos por QR)">
+          <p>
+            Cuando el Usuario elige el pago por código QR, se comparten con el Banco Económico{" "}
+            <strong>únicamente los datos indispensables para procesar la transacción.</strong> Ruppit no interviene en
+            el procesamiento del pago ni almacena datos de la transacción bancaria.
+          </p>
+        </Subsection>
+
+        <Subsection title="7.4 Con autoridades competentes">
+          <p>
+            Ruppit podrá divulgar datos personales a autoridades judiciales, fiscales o administrativas bolivianas{" "}
+            <strong>únicamente ante una orden judicial válida</strong> y en los términos exactos que dicha orden
+            establezca.
+          </p>
+        </Subsection>
+      </Section>
+
+      <Section title="8. Pagos y datos bancarios">
+        <Subsection title="8.1 Pago en efectivo">
+          <p>
+            Los pagos en efectivo se realizan directamente entre pasajero y conductor al finalizar el viaje. Este
+            método no genera ningún dato digital procesado o almacenado por Ruppit.
+          </p>
+        </Subsection>
+        <Subsection title="8.2 Pago por código QR">
+          <p>
+            Los pagos mediante código QR son compatibles con cualquier entidad bancaria boliviana que admita este
+            método. La transacción se procesa directamente a través de la entidad bancaria del Usuario.
+          </p>
+          <p>
+            <strong>Ruppit no almacena, no procesa ni tiene acceso a:</strong>
+          </p>
+          <ul>
+            <li>Números de cuenta bancaria.</li>
+            <li>Números de tarjeta de débito o crédito.</li>
+            <li>Claves o credenciales bancarias.</li>
+            <li>Información financiera sensible de ningún tipo.</li>
+          </ul>
+        </Subsection>
+      </Section>
+
+      <Section title="9. Seguridad de los datos">
+        <p>Ruppit aplica medidas técnicas y organizativas razonables para proteger sus datos personales, incluyendo:</p>
         <ul>
-          <li>
-            <strong>Foto de perfil</strong> — para que conductores y pasajeros puedan identificarse mutuamente
-            antes del viaje.
-          </li>
-          <li>
-            <strong>Verificación de documentos</strong> (solo para conductores) — fotografía de licencia de
-            conducir y documentos del vehículo al momento del registro.
-          </li>
+          <li>Transmisión de datos mediante protocolos de cifrado (HTTPS/TLS).</li>
+          <li>Almacenamiento de contraseñas mediante técnicas de hash seguro.</li>
+          <li>Acceso restringido a datos personales solo al personal autorizado de Ruppit.</li>
+          <li>Revisiones periódicas de nuestras prácticas de seguridad.</li>
         </ul>
         <p>
-          Las imágenes capturadas se almacenan de forma segura y <strong>nunca</strong> se accede a la cámara sin
-          que tú hayas iniciado la acción (tomar foto o escanear documento). La app no graba video ni toma fotos
-          en segundo plano.
+          En caso de que Ruppit tome conocimiento de una brecha de seguridad que afecte significativamente sus datos
+          personales, le notificaremos a través de la Aplicación o por correo electrónico en el menor tiempo posible.
         </p>
       </Section>
 
-      <Section title="5. Cómo usamos tus datos">
-        <ul>
-          <li>Prestar el servicio de transporte y conectarte con conductores disponibles.</li>
-          <li>Procesar y registrar los pagos de cada viaje.</li>
-          <li>Enviar notificaciones relacionadas con tu viaje (conductor en camino, llegada, etc.).</li>
-          <li>Mejorar la experiencia de la app mediante análisis de uso anónimo.</li>
-          <li>Resolver disputas, fraudes o problemas de seguridad.</li>
-          <li>Cumplir con obligaciones legales aplicables.</li>
-        </ul>
-        <p>
-          <strong>No vendemos</strong> tus datos personales a terceros con fines publicitarios.
+      <Section title="10. Retención de datos">
+        <Table
+          headers={["Tipo de dato", "Período de retención"]}
+          rows={[
+            [
+              "Datos de cuenta (nombre, teléfono, correo, foto de perfil)",
+              "Mientras la cuenta esté activa. Eliminados o anonimizados a solicitud del Usuario o tras el cierre de cuenta.",
+            ],
+            [
+              "Historial de viajes",
+              "Hasta 3 años desde la fecha del viaje, por razones legales y de resolución de disputas.",
+            ],
+            [
+              "Ubicación en tiempo real durante el viaje",
+              "Eliminada al concluir el viaje. No se conserva historial de rutas detalladas.",
+            ],
+            [
+              "Datos de verificación de conductores (CI, documentos)",
+              "Mientras la cuenta esté activa y hasta 3 años después del cierre de la cuenta del conductor.",
+            ],
+            [
+              "Datos técnicos y de uso de la Aplicación",
+              "Hasta 12 meses, en formato agregado y anonimizado para análisis de mejora.",
+            ],
+          ]}
+        />
+        <p className="mt-3">
+          Transcurridos los plazos indicados, los datos serán eliminados de manera segura o anonimizados de forma
+          irreversible.
         </p>
       </Section>
 
-      <Section title="6. Datos que compartimos con terceros">
-        <ul>
-          <li>
-            <strong>Conductores:</strong> reciben tu nombre, foto de perfil y ubicación de recogida durante el
-            viaje. No reciben tu número de teléfono completo ni correo electrónico.
-          </li>
-          <li>
-            <strong>Proveedores de mapas:</strong> usamos servicios de mapas externos para calcular rutas. Solo
-            comparten los datos de ubicación necesarios para la ruta activa.
-          </li>
-          <li>
-            <strong>Procesadores de pago:</strong> si realizas pagos en la app, los datos de pago se gestionan a
-            través de proveedores certificados (PCI-DSS). Ruppit no almacena datos de tarjeta.
-          </li>
-          <li>
-            <strong>Autoridades:</strong> podemos compartir información cuando exista una orden judicial o
-            requerimiento legal válido.
-          </li>
-        </ul>
-      </Section>
-
-      <Section title="7. Seguridad de los datos">
+      <Section title="11. Cookies y seguimiento en la web">
         <p>
-          Protegemos tu información mediante cifrado en tránsito (TLS) y en reposo. El acceso a los datos está
-          restringido a los empleados y sistemas que lo necesiten para operar el servicio. Sin embargo, ningún
-          sistema es 100 % seguro. En caso de una brecha de seguridad que afecte tus datos, te notificaremos
-          conforme a la ley aplicable.
+          El sitio web <strong>ruppit.com</strong> utiliza exclusivamente{" "}
+          <strong>cookies técnicas esenciales</strong>, es decir, aquellas estrictamente necesarias para el
+          funcionamiento básico del sitio, como mantener la sesión iniciada o recordar preferencias.
+        </p>
+        <p>Ruppit:</p>
+        <ul>
+          <li>No utiliza cookies de seguimiento publicitario ni de retargeting.</li>
+          <li>No instala cookies de terceros con fines de análisis de comportamiento comercial.</li>
+          <li>No comparte datos de navegación con plataformas publicitarias ni intermediarios de datos.</li>
+        </ul>
+        <p>
+          El Usuario puede gestionar o eliminar las cookies desde la configuración de su navegador web. La eliminación
+          de cookies técnicas puede afectar el funcionamiento de algunas secciones del sitio.
         </p>
       </Section>
 
-      <Section title="8. Retención de datos">
+      <Section title="12. Derechos del usuario sobre sus datos">
+        <p>El Usuario tiene los siguientes derechos sobre sus datos personales:</p>
         <ul>
           <li>
-            <strong>Datos de cuenta:</strong> se conservan mientras tu cuenta esté activa o hasta que solicites
-            su eliminación.
+            <strong>Acceso:</strong> solicitar y obtener una copia de los datos personales que tratamos sobre usted.
           </li>
           <li>
-            <strong>Historial de viajes:</strong> se conserva por 3 años por motivos legales y de soporte.
+            <strong>Rectificación:</strong> solicitar la corrección de datos inexactos, incompletos o desactualizados.
           </li>
           <li>
-            <strong>Datos de ubicación en tiempo real:</strong> se eliminan al concluir el viaje; solo guardamos
-            el origen y destino final.
-          </li>
-        </ul>
-      </Section>
-
-      <Section title="9. Tus derechos">
-        <p>Tienes derecho a:</p>
-        <ul>
-          <li>
-            <strong>Acceder</strong> a los datos personales que tenemos sobre ti.
+            <strong>Cancelación o eliminación:</strong> solicitar la eliminación de sus datos cuando ya no sean
+            necesarios para los fines para los que fueron recopilados.
           </li>
           <li>
-            <strong>Corregir</strong> datos incorrectos o desactualizados.
+            <strong>Oposición:</strong> oponerse al tratamiento de sus datos para determinadas finalidades.
           </li>
           <li>
-            <strong>Eliminar</strong> tu cuenta y los datos asociados.
+            <strong>Portabilidad:</strong> solicitar sus datos en un formato estructurado y de uso común.
           </li>
           <li>
-            <strong>Retirar el permiso</strong> de cámara o ubicación en cualquier momento desde la configuración
-            de tu dispositivo.
-          </li>
-          <li>
-            <strong>Oponerte</strong> al procesamiento de tus datos en ciertos casos.
+            <strong>Revocación del consentimiento:</strong> retirar su consentimiento en cualquier momento, sin que
+            ello afecte la licitud del tratamiento realizado previamente.
           </li>
         </ul>
         <p>
-          Para ejercer cualquiera de estos derechos escríbenos a{" "}
-          <a href="mailto:soporte@ruppit.com" className="text-primary underline underline-offset-4">
-            soporte@ruppit.com
-          </a>
-          .
+          Para ejercer cualquiera de estos derechos, envíe una solicitud escrita a{" "}
+          <a href="mailto:soporte@ruppit.com">soporte@ruppit.com</a> indicando su nombre completo, el teléfono
+          asociado a la cuenta y el derecho que desea ejercer.
         </p>
       </Section>
 
-      <Section title="10. Cambios a esta política">
+      <Section title="13. Menores de edad">
         <p>
-          Podemos actualizar esta Política de Privacidad. Cuando hagamos cambios importantes te notificaremos por
-          correo electrónico o mediante un aviso en la app antes de que entren en vigor.
+          La Aplicación está dirigida a personas mayores de dieciocho (18) años. Ruppit no recopila de manera
+          intencional datos personales de menores de edad.
+        </p>
+        <p>
+          Si usted es padre, madre o tutor legal y tiene conocimiento de que un menor ha proporcionado datos personales
+          a Ruppit sin su consentimiento, contáctenos de inmediato en{" "}
+          <a href="mailto:soporte@ruppit.com">soporte@ruppit.com</a> para proceder a la eliminación de dicha
+          información.
         </p>
       </Section>
 
-      <Section title="11. Contacto">
+      <Section title="14. Cambios a esta política">
         <p>
-          Si tienes preguntas sobre esta política o sobre el manejo de tus datos personales, contáctanos en:
+          Ruppit podrá modificar esta Política de Privacidad cuando sea necesario, por ejemplo, ante cambios en el
+          servicio, nuevas funcionalidades o modificaciones legales. Cuando se realicen cambios sustanciales, le
+          notificaremos mediante:
+        </p>
+        <ul>
+          <li>Una notificación push en la Aplicación.</li>
+          <li>Un aviso destacado en la pantalla de inicio de la Aplicación al ingresar.</li>
+          <li>Un correo electrónico a la dirección registrada en su cuenta, cuando lo consideremos necesario.</li>
+        </ul>
+        <p>
+          La fecha de la versión vigente se indica al inicio de este documento. El uso continuado de la Aplicación
+          tras la notificación de cambios implicará su aceptación de la versión actualizada.
+        </p>
+      </Section>
+
+      <Section title="15. Contacto">
+        <p>
+          Si tiene preguntas, dudas o desea ejercer alguno de sus derechos sobre sus datos personales, puede
+          comunicarse con nosotros:
         </p>
         <p>
           <strong>Ruppit</strong>
@@ -212,6 +406,10 @@ export default function PrivacyPolicy() {
           <a href="mailto:soporte@ruppit.com" className="text-primary underline underline-offset-4">
             soporte@ruppit.com
           </a>
+          <br />
+          Sitio web: ruppit.com
+          <br />
+          Operaciones: Camiri, Santa Cruz, Estado Plurinacional de Bolivia
         </p>
       </Section>
     </main>
@@ -222,7 +420,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <section className="mb-10">
       <h2 className="mb-4 text-xl font-semibold tracking-tight sm:text-2xl">{title}</h2>
-      <div className="text-muted-foreground flex flex-col gap-3 text-sm leading-7 sm:text-base [&_a]:text-primary [&_li]:ml-4 [&_li]:list-disc [&_strong]:text-foreground">
+      <div className="text-muted-foreground flex flex-col gap-3 text-sm leading-7 sm:text-base [&_a]:text-[#b38900] [&_a]:underline [&_a]:underline-offset-4 [&_li]:ml-4 [&_li]:list-disc [&_strong]:text-foreground">
         {children}
       </div>
     </section>
@@ -241,7 +439,37 @@ function Subsection({ title, children }: { title: string; children: React.ReactN
 function Callout({ children }: { children: React.ReactNode }) {
   return (
     <div className="border-primary/40 bg-primary/5 mb-4 rounded-lg border-l-4 px-4 py-3 text-sm">
-      <strong className="text-foreground">Aviso de permiso:</strong> {children}
+      <strong className="text-foreground">Aviso importante: </strong>
+      {children}
+    </div>
+  );
+}
+
+function Table({ headers, rows }: { headers: string[]; rows: string[][] }) {
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="bg-muted/50">
+            {headers.map((h) => (
+              <th key={h} className="text-foreground px-4 py-2 text-left font-medium">
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr key={i} className="border-t border-border">
+              {row.map((cell, j) => (
+                <td key={j} className="px-4 py-2">
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

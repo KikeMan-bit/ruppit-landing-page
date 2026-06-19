@@ -94,7 +94,7 @@ const jsonLd = {
           name: "¿En qué ciudades estará disponible Ruppit?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Ruppit nace en Camiri, Bolivia. Desde ahí comenzamos a transformar la manera en que las personas se mueven, con planes de expansión a más ciudades en el corto plazo.",
+            text: "Ruppit nace en las provincias de Bolivia, comenzando en Camiri como ciudad piloto. Desde ahí transformamos la manera en que las personas se mueven, con expansión a más provincias y ciudades.",
           },
         },
         {
@@ -141,7 +141,9 @@ export default function Home() {
             <Hero />
           </main>
         </div>
-        <HowItWorks />
+        <div id="how-it-works">
+          <HowItWorks />
+        </div>
         {/* <AppShowcase /> */}
         <Features />
         {/* <Safety /> */}

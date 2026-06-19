@@ -3,10 +3,11 @@
 import { motion } from "motion/react"
 import { BlurFade } from "@/components/ui/blur-fade";
 import { AvatarCircles } from "@/components/ui/avatar-circles";
-import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { Android } from "@/components/ui/android";
 import { WordRotate } from "@/components/ui/word-rotate";
 import { Particles } from "@/components/ui/particles";
+import { MouseSpotlight } from "@/components/ui/mouse-spotlight";
+import Countdown from "./Countdown";
 
 const avatars = [
   { imageUrl: "https://i.pravatar.cc/60?img=47", profileUrl: "#" },
@@ -21,6 +22,9 @@ export default function Hero() {
 
       {/* Radial spotlight detrás del texto */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[420px] rounded-full bg-primary/10 blur-[100px] pointer-events-none" />
+
+      {/* Foco que sigue al cursor */}
+      <MouseSpotlight size={560} color="rgba(255,195,0,0.10)" />
 
       {/* Partículas */}
       <Particles className="absolute inset-0 pointer-events-none" quantity={90} color="#ffc300" size={0.55} />
@@ -60,22 +64,13 @@ export default function Hero() {
         </p>
       </BlurFade>
 
-      {/* CTA */}
+      {/* Countdown de lanzamiento */}
       <BlurFade delay={0.5} direction="up">
-        <div className="relative">
-          <div className="absolute inset-0 bg-primary/30 blur-xl rounded-full scale-110 pointer-events-none" />
-          <ShimmerButton
-            background="#ffc300"
-            shimmerColor="#ffe066"
-            className="relative text-sm font-medium px-7 sm:px-8 py-3 text-black"
-          >
-            Próximamente
-          </ShimmerButton>
-        </div>
+        <Countdown />
       </BlurFade>
 
       {/* Phone mockup flotante */}
-      <BlurFade delay={0.65} direction="up">
+      <BlurFade delay={0.8} direction="up">
         <div className="mt-10 sm:mt-14 flex justify-center items-end relative">
 
           {/* Glow del teléfono — simula la luz de la pantalla */}

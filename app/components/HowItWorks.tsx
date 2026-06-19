@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "motion/react"
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence, useReducedMotion } from "motion/react"
 import { MapPin, Users, HandCoins, CarFront, Smartphone, Eye, ThumbsUp, Wallet } from "lucide-react"
 
 type Step = {
@@ -73,17 +73,51 @@ const tabs = [
 export default function HowItWorks() {
   const [activeTab, setActiveTab] = useState<"passengers" | "drivers">("passengers")
   const [direction, setDirection] = useState(1)
+  const [activeStep, setActiveStep] = useState(0)
+  const [mounted, setMounted] = useState(false)
+  const reduceMotion = useReducedMotion()
+  // Solo animamos tras el montaje para que el HTML del servidor y el del
+  // primer render del cliente coincidan (evita el error de hidratación).
+  const animate = mounted && !reduceMotion
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => setMounted(true))
+    return () => cancelAnimationFrame(raf)
+  }, [])
 
   const handleTabChange = (tab: "passengers" | "drivers") => {
     setDirection(tab === "drivers" ? 1 : -1)
     setActiveTab(tab)
+    setActiveStep(0)
   }
 
   const activeSteps = activeTab === "passengers" ? passengerSteps : driverSteps
+  // Porcentaje de la línea de progreso según el paso activo (0 → 100%)
+  const progress = (activeStep / (activeSteps.length - 1)) * 100
+
+  // Avance automático que recorre los pasos (corre siempre, aun con
+  // "reducir movimiento": es la función principal, no una decoración).
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveStep((s) => (s + 1) % 4)
+    }, 5000)
+    return () => clearInterval(id)
+  }, [activeTab])
 
   return (
-    <section className="w-full py-20 sm:py-28 px-4 sm:px-6 bg-gray-50">
-      <div className="max-w-5xl mx-auto">
+    <section className="relative w-full py-20 sm:py-28 px-4 sm:px-6 bg-gray-50 overflow-hidden">
+      {/* Patrón de puntos con desvanecido */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 [background:radial-gradient(circle,rgba(0,0,0,0.07)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_60%_55%_at_50%_40%,#000_30%,transparent_75%)]"
+      />
+      {/* Glow primario superior */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-24 left-1/2 -translate-x-1/2 w-[640px] h-[320px] rounded-full bg-primary/15 blur-[120px] pointer-events-none"
+      />
+
+      <div className="relative max-w-5xl mx-auto">
 
         {/* Header */}
         <motion.div
@@ -93,7 +127,8 @@ export default function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-black mb-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-black mb-4 shadow-sm backdrop-blur-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             Proceso
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
@@ -110,9 +145,9 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="flex justify-center mb-14"
+          className="flex justify-center mb-16"
         >
-          <div className="relative flex bg-gray-100 rounded-full p-1 gap-1">
+          <div className="relative flex bg-gray-100 rounded-full p-1 gap-1 shadow-inner">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -143,63 +178,128 @@ export default function HowItWorks() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -direction * 50 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4"
+            className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 lg:gap-5"
           >
-            {/* Connecting dashed line — desktop only */}
+            {/* Conector con progreso — solo desktop */}
             <div
               aria-hidden="true"
-              className="hidden lg:block absolute top-8 h-px border-t-2 border-dashed border-[#000000]/20"
+              className="hidden lg:block absolute top-8 h-[2px] pointer-events-none"
               style={{ left: "12.5%", right: "12.5%" }}
-            />
-
-            {activeSteps.map((step, index) => (
+            >
+              {/* Línea base punteada */}
+              <div className="absolute inset-0 border-t-2 border-dashed border-black/15" />
+              {/* Relleno que se pinta hasta el paso actual */}
               <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.45, delay: index * 0.1, ease: "easeOut" }}
-                className="flex flex-col items-center text-center group"
-              >
-                {/* Icon circle */}
-                <div className="relative mb-5 z-10">
-                  <motion.div
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="w-16 h-16 rounded-full bg-black border-2 border-[#000000] flex items-center justify-center shadow-sm group-hover:border-[#ffc300]/50 group-hover:shadow-[0_0_20px_rgba(255,195,0,0.15)] transition-all duration-300 text-[#ffc300]"
-                  >
-                    {step.icon}
-                  </motion.div>
+                className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-primary to-[#ffd84d]"
+                initial={{ width: "0%" }}
+                animate={{ width: mounted ? `${progress}%` : "0%" }}
+                transition={{ duration: reduceMotion ? 0 : 0.7, ease: "easeInOut" }}
+              />
+              {/* Punto de progreso en el borde de avance */}
+              {mounted && (
+                <motion.div
+                  className="absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary ring-2 ring-white shadow-[0_0_14px_4px_rgba(255,195,0,0.7)]"
+                  initial={{ left: "0%" }}
+                  animate={{ left: `${progress}%` }}
+                  transition={{ duration: reduceMotion ? 0 : 0.7, ease: "easeInOut" }}
+                />
+              )}
+            </div>
 
-                  {/* Step number badge */}
-                  <div className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#ffc300] flex items-center justify-center ring-2 ring-white">
-                    <span className="text-black text-[9px] font-black leading-none">
-                      {step.number}
-                    </span>
+            {activeSteps.map((step, index) => {
+              const isActive = activeStep === index
+              return (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.45, delay: index * 0.1, ease: "easeOut" }}
+                  className="group relative flex h-full flex-col items-center text-center"
+                >
+                  {/* Icon circle */}
+                  <div className="relative mb-5 z-10">
+                    <motion.div
+                      animate={{
+                        scale: isActive ? 1.12 : 1,
+                        boxShadow: isActive
+                          ? "0 0 28px rgba(255,195,0,0.45)"
+                          : "0 1px 2px rgba(0,0,0,0.08)",
+                      }}
+                      whileHover={{ scale: 1.12 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className={`w-16 h-16 rounded-full flex items-center justify-center border-2 transition-colors duration-300 ${
+                        isActive
+                          ? "bg-primary border-primary text-black"
+                          : "bg-black border-black text-primary group-hover:border-primary/60"
+                      }`}
+                    >
+                      {step.icon}
+                    </motion.div>
+
+                    {/* Step number badge */}
+                    <div className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#ffc300] flex items-center justify-center ring-2 ring-white">
+                      <span className="text-black text-[9px] font-black leading-none">
+                        {step.number}
+                      </span>
+                    </div>
+
+                    {/* Pulse ring — solo en el paso activo */}
+                    {isActive && animate && (
+                      <motion.div
+                        className="absolute inset-0 rounded-full border-2 border-primary/40"
+                        animate={{ scale: [1, 1.6, 1], opacity: [0.6, 0, 0.6] }}
+                        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                      />
+                    )}
                   </div>
 
-                  {/* Pulse ring */}
+                  {/* Card con texto — altura uniforme + borde animado */}
                   <motion.div
-                    className="absolute inset-0 rounded-full border-2 border-[#ffc300]/30"
-                    animate={{ scale: [1, 1.35, 1], opacity: [0.5, 0, 0.5] }}
-                    transition={{
-                      duration: 2.5,
-                      repeat: Infinity,
-                      delay: index * 0.4,
-                      ease: "easeInOut",
-                    }}
-                  />
-                </div>
+                    animate={{ y: isActive ? -6 : 0 }}
+                    whileHover={{ y: -6 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                    className="relative w-full flex-1"
+                  >
+                    <div
+                      className={`relative h-full w-full overflow-hidden rounded-2xl p-[1.5px] transition-colors duration-300 ${
+                        isActive ? "bg-primary/30" : "bg-gray-200/70"
+                      }`}
+                    >
+                      {/* Borde giratorio (solo paso activo) */}
+                      {isActive && animate && (
+                        <motion.span
+                          aria-hidden="true"
+                          className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[180%] -translate-x-1/2 -translate-y-1/2"
+                          style={{
+                            background:
+                              "conic-gradient(from 0deg, transparent 0deg, #ffc300 70deg, #fff3c4 110deg, transparent 160deg, transparent 360deg)",
+                          }}
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 3.2, repeat: Infinity, ease: "linear" }}
+                        />
+                      )}
 
-                {/* Text */}
-                <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 leading-snug">
-                  {step.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-[180px]">
-                  {step.desc}
-                </p>
-              </motion.div>
-            ))}
+                      {/* Contenido */}
+                      <div
+                        className={`relative z-10 flex h-full flex-col justify-center rounded-[15px] px-5 py-6 transition-shadow duration-300 ${
+                          isActive
+                            ? "bg-white shadow-[0_18px_40px_-12px_rgba(255,195,0,0.4)]"
+                            : "bg-white/80 shadow-sm group-hover:shadow-xl"
+                        }`}
+                      >
+                        <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 leading-snug">
+                          {step.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                          {step.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              )
+            })}
           </motion.div>
         </AnimatePresence>
 

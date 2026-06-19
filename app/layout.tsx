@@ -15,15 +15,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ruppit.com"),
   title: {
-    default: "Ruppit – Viaja a tu precio en Camiri, Bolivia",
+    default: "Ruppit – Viaja a tu precio en las provincias de Bolivia",
     template: "%s | Ruppit",
   },
   description:
-    "Ruppit es la app de movilidad compartida donde tú propones el precio de tu viaje. Conecta con conductores verificados en Camiri, Bolivia. Sin precios impuestos, sin sorpresas.",
+    "Ruppit es la app de movilidad compartida donde tú propones el precio de tu viaje. Conecta con conductores verificados en las provincias de Bolivia. Sin precios impuestos, sin sorpresas.",
   keywords: [
     "Ruppit",
     "app de transporte Bolivia",
-    "movilidad compartida Camiri",
+    "movilidad compartida provincias Bolivia",
     "viaje compartido Bolivia",
     "taxi app Bolivia",
     "conductor verificado",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "transporte alternativo Bolivia",
     "carpooling Bolivia",
     "ride sharing Bolivia",
-    "Camiri Bolivia transporte",
+    "provincias Bolivia transporte",
     "app movilidad Bolivia",
   ],
   authors: [{ name: "Ruppit", url: "https://ruppit.com" }],
@@ -52,12 +52,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_BO",
     siteName: "Ruppit",
-    title: "Ruppit – Viaja a tu precio en Camiri, Bolivia",
+    title: "Ruppit – Viaja a tu precio en las provincias de Bolivia",
     description:
       "La app de movilidad compartida donde tú propones el precio. Conductores verificados, sin sorpresas.",
     images: [
       {
-        url: "/logo.webp",
+        url: "/logo-icon.png",
         width: 512,
         height: 512,
         alt: "Ruppit – App de movilidad compartida en Bolivia",
@@ -66,10 +66,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Ruppit – Viaja a tu precio en Camiri, Bolivia",
+    title: "Ruppit – Viaja a tu precio en las provincias de Bolivia",
     description:
       "La app de movilidad compartida donde tú propones el precio. Conductores verificados, sin sorpresas.",
-    images: ["/logo.webp"],
+    images: ["/logo-icon.png"],
   },
 };
 

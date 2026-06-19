@@ -52,12 +52,12 @@ function FeatureItem({
         <p
           className={cn(
             "font-semibold text-sm leading-snug mb-1 transition-colors duration-200",
-            isActive ? "text-white" : "text-gray-300",
+            isActive ? "text-white" : "text-primary",
           )}
         >
           {feature.title}
         </p>
-        <p className="text-xs text-gray-500 leading-relaxed">{feature.description}</p>
+        <p className="text-xs text-white/80 leading-relaxed">{feature.description}</p>
       </div>
     </motion.button>
   );

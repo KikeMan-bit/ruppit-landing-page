@@ -39,7 +39,7 @@ const requirements = [
 const faqs = [
   { q: "¿Cuánto cobra Ruppit de comisión?",    a: "Ruppit opera con una comisión baja y transparente. La conocerás antes de activar tu cuenta — sin cargos sorpresa." },
   { q: "¿Cuándo recibo mis ganancias?",         a: "Recibes el pago al finalizar cada viaje. No hay retención semanal ni esperas." },
-  { q: "¿En qué ciudades opera Ruppit?",        a: "Comenzamos en Camiri, Bolivia, con expansión planeada a más ciudades en el corto plazo." },
+  { q: "¿En qué ciudades opera Ruppit?",        a: "Ruppit opera en provincias de Bolivia, comenzando en Camiri como ciudad piloto, con expansión planeada a más provincias y ciudades." },
   { q: "¿Puedo manejar con cualquier vehículo?",a: "Aceptamos autos particulares, pickups, minivans y mototaxis. El vehículo debe tener documentación al día." },
   { q: "¿Qué pasa si el pasajero cancela?",     a: "La política de cancelación protege tu tiempo. Los detalles completos estarán disponibles al momento del lanzamiento." },
 ]
@@ -124,7 +124,7 @@ export default function DriverLanding() {
             {[
               { label: "Viajes disponibles ahora", value: "12",     sub: "cerca de ti",           color: "from-[#ffc300]/20 to-[#ffc300]/5" },
               { label: "Tiempo promedio de espera", value: "3 min", sub: "para tu primer viaje",  color: "from-white/10 to-white/5" },
-              { label: "Tarifa promedio en Camiri", value: "Bs. 5",sub: "por viaje corto",        color: "from-white/10 to-white/5" },
+              { label: "Tarifa promedio en provincias", value: "Bs. 5",sub: "por viaje corto",        color: "from-white/10 to-white/5" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -272,7 +272,7 @@ export default function DriverLanding() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight">¿Listo para empezar?</h2>
           <p className="text-gray-400 mb-8 text-sm leading-relaxed">
-            Sé de los primeros conductores en Ruppit cuando lancemos en Camiri.
+            Sé de los primeros conductores en Ruppit en las provincias de Bolivia.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}

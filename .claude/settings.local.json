@@ -27,7 +27,12 @@
       "PowerShell(Get-Command *)",
       "PowerShell(& \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\" --headless=new --screenshot=\"C:\\\\Users\\\\Carlos\\\\AppData\\\\Local\\\\Temp\\\\features-section.png\" --window-size=1440,900 --hide-scrollbars --virtual-time-budget=3000 \"http://localhost:3000\" 2>&1; Start-Sleep -Seconds 5; Test-Path \"C:\\\\Users\\\\Carlos\\\\AppData\\\\Local\\\\Temp\\\\features-section.png\")",
       "PowerShell(taskkill *)",
-      "Bash(Remove-Item *)"
+      "Bash(Remove-Item *)",
+      "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\('next:', p.dependencies.next, '\\\\ntypescript:', p.devDependencies.typescript\\)\")",
+      "PowerShell(npx tsc --noEmit -p tsconfig.json 2>&1 | Select-Object -First 30)",
+      "PowerShell(npx tsc --noEmit -p tsconfig.json 2>&1 | Select-Object -First 40)",
+      "PowerShell(npx eslint app/components/Navbar.tsx app/components/Footer.tsx app/components/FAQ.tsx app/components/Hero.tsx app/components/Countdown.tsx components/ui/magnetic.tsx components/ui/scroll-progress.tsx components/ui/mouse-spotlight.tsx 2>&1 | Select-Object -First 60)",
+      "PowerShell(npm run *)"
     ]
   }
 }

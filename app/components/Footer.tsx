@@ -1,6 +1,41 @@
+"use client";
+
 import Link from "next/link";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { Magnetic } from "@/components/ui/magnetic";
 import Image from "next/image";
+
+// Link con subrayado que se revela de izquierda a derecha
+function FooterLink({
+  href,
+  children,
+  external,
+}: {
+  href: string;
+  children: React.ReactNode;
+  external?: boolean;
+}) {
+  const className =
+    "group relative inline-flex w-fit items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors";
+  const underline = (
+    <span className="pointer-events-none absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100" />
+  );
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" className={className}>
+        {children}
+        {underline}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className}>
+      {children}
+      {underline}
+    </Link>
+  );
+}
 
 function AppleIcon() {
   return (
@@ -71,42 +106,37 @@ export default function Footer() {
             {/* Ruppit links */}
             <div className="flex flex-col gap-3">
               <h3 className="font-semibold text-white text-sm">Ruppit</h3>
-              <nav className="flex flex-col gap-2">
-                {["Funciones", "Cómo funciona", "Testimonios"].map((link) => (
-                  <a key={link} href="#" className="text-sm text-gray-400 hover:text-gray-300 transition-colors">
-                    {link}
-                  </a>
-                ))}
+              <nav className="flex flex-col gap-2 items-start">
+                <FooterLink href="/#how-it-works">Cómo funciona</FooterLink>
+                <FooterLink href="/#features">Funciones</FooterLink>
               </nav>
             </div>
 
             {/* Legal links */}
             <div className="flex flex-col gap-3">
               <h3 className="font-semibold text-white text-sm">Legal</h3>
-              <nav className="flex flex-col gap-2">
-                <Link href="/terms-and-conditions" className="text-sm text-gray-400 hover:text-gray-300 transition-colors">
-                  Términos y Condiciones
-                </Link>
-                <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-gray-300 transition-colors">
-                  Política de Privacidad
-                </Link>
-                <Link href="/delete-account" className="text-sm text-gray-400 hover:text-gray-300 transition-colors">
-                  Eliminar cuenta
-                </Link>
+              <nav className="flex flex-col gap-2 items-start">
+                <FooterLink href="/terms-and-conditions">Términos y Condiciones</FooterLink>
+                <FooterLink href="/privacy-policy">Política de Privacidad</FooterLink>
+                <FooterLink href="/delete-account">Eliminar cuenta</FooterLink>
               </nav>
             </div>
 
             {/* Social links */}
             <div className="flex flex-col gap-3">
               <h3 className="font-semibold text-white text-sm">Síguenos</h3>
-              <nav className="flex flex-col gap-2">
+              <nav className="flex flex-col gap-2 items-start">
                 {[
-                  { label: "Instagram", Icon: InstagramIcon },
-                  { label: "Twitter", Icon: XIcon },
-                  { label: "LinkedIn", Icon: LinkedInIcon },
-                ].map(({ label, Icon }) => (
-                  <a key={label} href="#" className="flex items-center gap-2 text-sm text-gray-400 hover:text-gray-300 transition-colors">
-                    <Icon />
+                  { label: "Instagram", Icon: InstagramIcon, href: "https://www.instagram.com/ruppit_oficial/" },
+                  // { label: "Twitter", Icon: XIcon, href: "https://x.com/ruppit.app" },
+                  { label: "LinkedIn", Icon: LinkedInIcon, href: "https://www.linkedin.com/company/ruppit" },
+                ].map(({ label, Icon, href }) => (
+                  <a key={label} href={href} target="_blank" className="group flex items-center gap-2.5 text-sm text-gray-400 hover:text-white transition-colors">
+                    <Magnetic strength={0.6}>
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10 transition-all duration-300 group-hover:bg-primary group-hover:text-black group-hover:ring-primary">
+                        <Icon />
+                      </span>
+                    </Magnetic>
                     {label}
                   </a>
                 ))}
