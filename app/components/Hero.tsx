@@ -1,12 +1,14 @@
 "use client"
 
 import { motion } from "motion/react"
+import Image from "next/image";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { AvatarCircles } from "@/components/ui/avatar-circles";
 import { Android } from "@/components/ui/android";
 import { WordRotate } from "@/components/ui/word-rotate";
 import { Particles } from "@/components/ui/particles";
 import { MouseSpotlight } from "@/components/ui/mouse-spotlight";
+import { PLAY_STORE_URL } from "@/lib/constants";
 import Countdown from "./Countdown";
 
 const avatars = [
@@ -67,6 +69,33 @@ export default function Hero() {
       {/* Countdown de lanzamiento */}
       <BlurFade delay={0.5} direction="up">
         <Countdown />
+      </BlurFade>
+
+      {/* CTA de pre-descarga */}
+      <BlurFade delay={0.6} direction="up">
+        <div className="mt-8 sm:mt-10 flex flex-col items-center gap-3">
+          <motion.a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="inline-block drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+            aria-label="Pre-descárgala en Google Play"
+          >
+            <Image
+              src="/logo-black-play-store.png"
+              alt="Disponible en Google Play"
+              width={646}
+              height={250}
+              priority
+              className="h-20 w-auto sm:h-24"
+            />
+          </motion.a>
+          <p className="text-white/50 text-xs">
+            Acceso anticipado · Lanzamiento oficial el 1 de julio
+          </p>
+        </div>
       </BlurFade>
 
       {/* Phone mockup flotante */}

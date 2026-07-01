@@ -7,6 +7,7 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "motion/react"
 import { ScrollProgress } from "@/components/ui/scroll-progress"
 import { Magnetic } from "@/components/ui/magnetic"
+import { PLAY_STORE_URL } from "@/lib/constants"
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -78,12 +79,16 @@ export default function Navbar() {
             </Link>
           ))}
           <Magnetic strength={0.5}>
-            <motion.button
+            <motion.a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className="relative overflow-hidden bg-primary text-black px-5 py-2 rounded-full text-sm font-medium min-h-[44px] shadow-[0_0_0_0_rgba(255,195,0,0.5)] hover:shadow-[0_0_24px_0_rgba(255,195,0,0.45)] transition-shadow"
+              className="relative overflow-hidden bg-primary text-black px-5 py-2 rounded-full text-sm font-medium min-h-[44px] inline-flex items-center shadow-[0_0_0_0_rgba(255,195,0,0.5)] hover:shadow-[0_0_24px_0_rgba(255,195,0,0.45)] transition-shadow"
+              aria-label="Pre-descárgala en Google Play"
             >
-              <span className="relative z-10">Próximamente</span>
+              <span className="relative z-10">Pre-descarga</span>
               {/* Brillo que cruza el botón */}
               <motion.span
                 className="absolute top-0 bottom-0 w-12 -skew-x-12 bg-white/50 blur-md"
@@ -91,7 +96,7 @@ export default function Navbar() {
                 animate={{ left: ["-30%", "130%"] }}
                 transition={{ duration: 2.4, ease: "easeInOut", repeat: Infinity, repeatDelay: 1.6 }}
               />
-            </motion.button>
+            </motion.a>
           </Magnetic>
         </div>
 
@@ -157,15 +162,19 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.button
+              <motion.a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.08 + navLinks.length * 0.07, duration: 0.3 }}
-                className="mt-2 bg-primary text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-[#e6a800] transition-colors w-full"
+                className="mt-2 bg-primary text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-[#e6a800] transition-colors w-full text-center"
                 onClick={() => setMenuOpen(false)}
+                aria-label="Pre-descárgala en Google Play"
               >
-                Próximamente
-              </motion.button>
+                Pre-descarga
+              </motion.a>
             </div>
           </motion.div>
         )}

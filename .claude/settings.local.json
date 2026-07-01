@@ -32,7 +32,9 @@
       "PowerShell(npx tsc --noEmit -p tsconfig.json 2>&1 | Select-Object -First 30)",
       "PowerShell(npx tsc --noEmit -p tsconfig.json 2>&1 | Select-Object -First 40)",
       "PowerShell(npx eslint app/components/Navbar.tsx app/components/Footer.tsx app/components/FAQ.tsx app/components/Hero.tsx app/components/Countdown.tsx components/ui/magnetic.tsx components/ui/scroll-progress.tsx components/ui/mouse-spotlight.tsx 2>&1 | Select-Object -First 60)",
-      "PowerShell(npm run *)"
+      "PowerShell(npm run *)",
+      "Bash(python -c \"from PIL import Image; print\\(Image.open\\('google-play-badge.webp'\\).size\\)\")",
+      "Bash(node -e \"const b=require\\('fs'\\).readFileSync\\('google-play-badge.webp'\\); /* VP8L dims */ console.log\\('size-bytes',b.length\\)\")"
     ]
   }
 }
