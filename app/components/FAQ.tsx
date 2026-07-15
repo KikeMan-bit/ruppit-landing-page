@@ -32,9 +32,9 @@ const faqs = [
       "Ruppit nace en las provincias de Bolivia, comenzando en Camiri como ciudad piloto. Desde ahí transformamos la manera en que las personas se mueven, con expansión a más provincias y ciudades.",
   },
   {
-    question: "¿Cuándo estará disponible la app?",
+    question: "¿Dónde puedo descargar la app?",
     answer:
-      "Ruppit está en desarrollo activo. Pronto podrás descargarla en iOS y Android. Mantente atento a nuestras redes para conocer la fecha de lanzamiento oficial.",
+      "¡Ruppit ya está disponible! Descárgala gratis en Google Play para Android. La versión para iOS llegará muy pronto.",
   },
   {
     question: "¿Hay comisiones ocultas?",
@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "¿Puedo cancelar un viaje?",
     answer:
-      "Sí, puedes cancelar antes de que el conductor llegue a tu ubicación. Los detalles completos sobre la política de cancelación estarán disponibles al momento del lanzamiento.",
+      "Sí, puedes cancelar antes de que el conductor llegue a tu ubicación. Encuentra los detalles completos de la política de cancelación directamente en la app.",
   },
 ];
 

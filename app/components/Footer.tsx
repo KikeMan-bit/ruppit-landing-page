@@ -78,7 +78,7 @@ export default function Footer() {
                 href={PLAY_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Pre-descárgala en Google Play"
+                aria-label="Descárgala en Google Play"
                 className="inline-block w-fit transition-transform hover:scale-105"
               >
                 <Image
@@ -97,6 +97,10 @@ export default function Footer() {
               <nav className="flex flex-col gap-2 items-start">
                 <FooterLink href="/#how-it-works">Cómo funciona</FooterLink>
                 <FooterLink href="/#features">Funciones</FooterLink>
+                <FooterLink href="/customer">Clientes</FooterLink>
+                <FooterLink href="/delivery">Delivery</FooterLink>
+                <FooterLink href="/business">Negocios</FooterLink>
+                <FooterLink href="/driver">Conductores</FooterLink>
               </nav>
             </div>
 

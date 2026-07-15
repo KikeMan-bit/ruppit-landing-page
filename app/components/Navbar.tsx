@@ -11,6 +11,9 @@ import { PLAY_STORE_URL } from "@/lib/constants"
 
 const navLinks = [
   { href: "/", label: "Inicio" },
+  { href: "/customer", label: "Clientes" },
+  { href: "/delivery", label: "Delivery" },
+  { href: "/business", label: "Negocios" },
   { href: "/driver", label: "Conductores" },
 ]
 
@@ -67,7 +70,7 @@ export default function Navbar() {
         </Link>
 
         {/* Links desktop */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -86,9 +89,9 @@ export default function Navbar() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className="relative overflow-hidden bg-primary text-black px-5 py-2 rounded-full text-sm font-medium min-h-[44px] inline-flex items-center shadow-[0_0_0_0_rgba(255,195,0,0.5)] hover:shadow-[0_0_24px_0_rgba(255,195,0,0.45)] transition-shadow"
-              aria-label="Pre-descárgala en Google Play"
+              aria-label="Descárgala en Google Play"
             >
-              <span className="relative z-10">Pre-descarga</span>
+              <span className="relative z-10">Descargar</span>
               {/* Brillo que cruza el botón */}
               <motion.span
                 className="absolute top-0 bottom-0 w-12 -skew-x-12 bg-white/50 blur-md"
@@ -102,7 +105,7 @@ export default function Navbar() {
 
         {/* Botón hamburguesa mobile */}
         <button
-          className="md:hidden flex items-center justify-center w-11 h-11 rounded-lg"
+          className="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={menuOpen}
@@ -142,7 +145,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`md:hidden overflow-hidden ${pastHero ? "bg-white/95" : "bg-black/95"} backdrop-blur-md`}
+            className={`lg:hidden overflow-hidden ${pastHero ? "bg-white/95" : "bg-black/95"} backdrop-blur-md`}
           >
             <div className="flex flex-col items-start gap-1 px-6 pb-6 pt-2">
               {navLinks.map((link, i) => (
@@ -171,9 +174,9 @@ export default function Navbar() {
                 transition={{ delay: 0.08 + navLinks.length * 0.07, duration: 0.3 }}
                 className="mt-2 bg-primary text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-[#e6a800] transition-colors w-full text-center"
                 onClick={() => setMenuOpen(false)}
-                aria-label="Pre-descárgala en Google Play"
+                aria-label="Descárgala en Google Play"
               >
-                Pre-descarga
+                Descargar
               </motion.a>
             </div>
           </motion.div>

@@ -71,7 +71,7 @@ export default function Hero() {
         <Countdown />
       </BlurFade>
 
-      {/* CTA de pre-descarga */}
+      {/* CTA de descarga */}
       <BlurFade delay={0.6} direction="up">
         <div className="mt-8 sm:mt-10 flex flex-col items-center gap-3">
           <motion.a
@@ -81,7 +81,7 @@ export default function Hero() {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             className="inline-block drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]"
-            aria-label="Pre-descárgala en Google Play"
+            aria-label="Descárgala en Google Play"
           >
             <Image
               src="/logo-black-play-store.png"
@@ -93,7 +93,7 @@ export default function Hero() {
             />
           </motion.a>
           <p className="text-white/50 text-xs">
-            Acceso anticipado · Lanzamiento oficial el 1 de julio
+            ¡Ya disponible! Descárgala gratis en Google Play
           </p>
         </div>
       </BlurFade>

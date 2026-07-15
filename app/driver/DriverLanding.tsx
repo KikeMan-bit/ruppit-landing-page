@@ -23,7 +23,7 @@ const benefits = [
 ]
 
 const steps = [
-  { icon: <Smartphone size={24} />, number: "01", title: "Descarga la app",        desc: "Disponible para Android e iOS muy pronto." },
+  { icon: <Smartphone size={24} />, number: "01", title: "Descarga la app",        desc: "Ya disponible en Google Play. Versión iOS muy pronto." },
   { icon: <UserPlus size={24} />,   number: "02", title: "Crea tu perfil",         desc: "Sube tu foto, documentos del vehículo e identidad." },
   { icon: <BadgeCheck size={24} />, number: "03", title: "Espera la verificación", desc: "Revisamos tu info en minutos y activamos tu cuenta." },
   { icon: <Wallet size={24} />,     number: "04", title: "Empieza a ganar",        desc: "Ve las ofertas cercanas y acepta las que te convengan." },
@@ -41,7 +41,7 @@ const faqs = [
   { q: "¿Cuándo recibo mis ganancias?",         a: "Recibes el pago al finalizar cada viaje. No hay retención semanal ni esperas." },
   { q: "¿En qué ciudades opera Ruppit?",        a: "Ruppit opera en provincias de Bolivia, comenzando en Camiri como ciudad piloto, con expansión planeada a más provincias y ciudades." },
   { q: "¿Puedo manejar con cualquier vehículo?",a: "Aceptamos autos particulares, pickups, minivans y mototaxis. El vehículo debe tener documentación al día." },
-  { q: "¿Qué pasa si el pasajero cancela?",     a: "La política de cancelación protege tu tiempo. Los detalles completos estarán disponibles al momento del lanzamiento." },
+  { q: "¿Qué pasa si el pasajero cancela?",     a: "La política de cancelación protege tu tiempo. Encuentra los detalles completos directamente en la app." },
 ]
 
 /* ─────────────────── COMPONENTS ─────────────────── */

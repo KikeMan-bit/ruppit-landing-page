@@ -99,10 +99,10 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "¿Cuándo estará disponible la app?",
+          name: "¿Dónde puedo descargar la app?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Ruppit está en desarrollo activo. Pronto podrás descargarla en iOS y Android. Mantente atento a nuestras redes para conocer la fecha de lanzamiento oficial.",
+            text: "¡Ruppit ya está disponible! Descárgala gratis en Google Play para Android. La versión para iOS llegará muy pronto.",
           },
         },
         {
@@ -118,7 +118,7 @@ const jsonLd = {
           name: "¿Puedo cancelar un viaje?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Sí, puedes cancelar antes de que el conductor llegue a tu ubicación. Los detalles completos sobre la política de cancelación estarán disponibles al momento del lanzamiento.",
+            text: "Sí, puedes cancelar antes de que el conductor llegue a tu ubicación. Encuentra los detalles completos de la política de cancelación directamente en la app.",
           },
         },
       ],
