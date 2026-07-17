@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import HowItWorks from "./components/HowItWorks";
-import AppShowcase from "./components/AppShowcase";
-import Safety from "./components/Safety";
-import FAQ from "./components/FAQ";
-import Footer from "./components/Footer";
-import { Features } from "./features/features";
+import HomeNavbar from "./components/home/HomeNavbar";
+import HomeHero from "./components/home/HomeHero";
+import TrustSection from "./components/home/TrustSection";
+import ServicesSection from "./components/home/ServicesSection";
+import SafetySection from "./components/home/SafetySection";
+import ProcessSection from "./components/home/ProcessSection";
+import HomeFaq from "./components/home/HomeFaq";
+import DownloadCta from "./components/home/DownloadCta";
+import HomeFooter from "./components/home/HomeFooter";
 
 export const metadata: Metadata = {
   alternates: {
@@ -133,22 +134,18 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="min-h-screen flex flex-col">
-        <div className="bg-black">
-          <Navbar />
-          <div className="" />
-          <main>
-            <Hero />
-          </main>
-        </div>
-        <div id="how-it-works">
-          <HowItWorks />
-        </div>
-        {/* <AppShowcase /> */}
-        <Features />
-        {/* <Safety /> */}
-        <FAQ />
-        <Footer />
+      <div className="min-h-screen flex flex-col bg-ink">
+        <HomeNavbar />
+        <main>
+          <HomeHero />
+          <TrustSection />
+          <ServicesSection />
+          <SafetySection />
+          <ProcessSection />
+          <HomeFaq />
+          <DownloadCta />
+        </main>
+        <HomeFooter />
       </div>
     </>
   );
