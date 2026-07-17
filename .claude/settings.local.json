@@ -35,7 +35,19 @@
       "PowerShell(npm run *)",
       "Bash(python -c \"from PIL import Image; print\\(Image.open\\('google-play-badge.webp'\\).size\\)\")",
       "Bash(node -e \"const b=require\\('fs'\\).readFileSync\\('google-play-badge.webp'\\); /* VP8L dims */ console.log\\('size-bytes',b.length\\)\")",
-      "PowerShell(npx tsc --noEmit)"
+      "PowerShell(npx tsc --noEmit)",
+      "PowerShell(git checkout *)",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "mcp__plugin_figma_figma__get_metadata",
+      "Bash(curl -L -o \"C:/Users/jorge/AppData/Local/Temp/claude/C--Dev-ruppit-landing-page/36fc5a2a-79ce-4de5-ba0b-c8f837d1fff9/scratchpad/home-desktop.png\" \"https://www.figma.com/api/mcp/asset/e2d10908-3503-49e2-9790-6d8135dfa6f7\")",
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_variable_defs",
+      "Bash(mkdir -p \"C:/Dev/ruppit-landing-page/public/redesign\")",
+      "Bash(curl -sL -D - -o hero-illustration.bin \"https://www.figma.com/api/mcp/asset/d6358028-94a7-44e1-a72f-eb83ea23c362\")",
+      "Bash(xxd)",
+      "PowerShell(pnpm build *)",
+      "Bash(curl -sL -D - -o trust-taxi.bin \"https://www.figma.com/api/mcp/asset/e3bf256c-abe3-4ab3-870f-b55302177ec2\")",
+      "PowerShell(Out-Null *)"
     ]
   }
 }
