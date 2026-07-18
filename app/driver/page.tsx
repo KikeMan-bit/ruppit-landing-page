@@ -25,7 +25,12 @@ export const metadata: Metadata = {
 export default function DriverPage() {
   return (
     <div className="min-h-screen flex flex-col bg-ink">
-      <HomeNavbar />
+      <HomeNavbar
+        links={[
+          { href: "/driver", label: "Conductores" },
+          { href: "#faq", label: "FAQs" },
+        ]}
+      />
       <main>
         <ConductoresHero />
         <ControlSection />

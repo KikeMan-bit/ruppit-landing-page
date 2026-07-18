@@ -9,14 +9,17 @@ import { PLAY_STORE_URL } from "@/lib/constants";
 import { Container, CtaButton } from "./_primitives";
 
 const navLinks = [
-  { href: "/customer", label: "Pasajeros" },
   { href: "/driver", label: "Conductores" },
-  { href: "/business", label: "Locales" },
-  { href: "/delivery", label: "Repartidor" },
   { href: "/#faq", label: "FAQs" },
 ];
 
-export default function HomeNavbar() {
+type NavLink = { href: string; label: string };
+
+export default function HomeNavbar({
+  links = navLinks,
+}: {
+  links?: NavLink[];
+} = {}) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Bloquear scroll del body con el menú móvil abierto
@@ -55,7 +58,7 @@ export default function HomeNavbar() {
 
           {/* Links (desktop) */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -140,7 +143,7 @@ export default function HomeNavbar() {
             className="lg:hidden overflow-hidden border-t border-[#212121] bg-ink/98 backdrop-blur-md"
           >
             <div className="flex flex-col items-start gap-1 px-6 pb-6 pt-3">
-              {navLinks.map((link, i) => (
+              {links.map((link, i) => (
                 <motion.div
                   key={link.href}
                   initial={{ opacity: 0, x: -16 }}

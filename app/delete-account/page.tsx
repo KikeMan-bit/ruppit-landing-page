@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
+import HomeNavbar from "@/app/components/home/HomeNavbar";
+import HomeFooter from "@/app/components/home/HomeFooter";
 import DeleteAccount from "@/app/components/delete-account";
 
 export const metadata: Metadata = {
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 export default function DeleteAccountPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar />
+      <HomeNavbar />
       <DeleteAccount />
-      <Footer />
+      <HomeFooter />
     </div>
   );
 }
