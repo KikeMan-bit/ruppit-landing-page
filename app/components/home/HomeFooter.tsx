@@ -20,13 +20,14 @@ const columns = [
     links: [
       { label: "Términos y Condiciones", href: "/terms-and-conditions" },
       { label: "Políticas de privacidad", href: "/privacy-policy" },
+      { label: "Eliminar cuenta", href: "/delete-account" },
     ],
   },
 ];
 
 export default function HomeFooter() {
   return (
-    <footer className="rounded-b-[24px] bg-ink pb-14">
+    <footer className="bg-ink pb-14 pt-14">
       <Container>
         {/* Marca + columnas */}
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">

@@ -47,7 +47,15 @@
       "Bash(xxd)",
       "PowerShell(pnpm build *)",
       "Bash(curl -sL -D - -o trust-taxi.bin \"https://www.figma.com/api/mcp/asset/e3bf256c-abe3-4ab3-870f-b55302177ec2\")",
-      "PowerShell(Out-Null *)"
+      "PowerShell(Out-Null *)",
+      "PowerShell(Stop-Job *)",
+      "mcp__plugin_figma_figma__whoami",
+      "Bash(curl -sL -o \"C:/Users/jorge/AppData/Local/Temp/claude/C--Dev-ruppit-landing-page/36fc5a2a-79ce-4de5-ba0b-c8f837d1fff9/scratchpad/conductores-full.png\" \"https://www.figma.com/api/mcp/asset/005fe5ac-5ce9-4c5e-a8ea-53e763228c69\")",
+      "PowerShell(Get-Job *)",
+      "PowerShell(git *)",
+      "PowerShell($out = \"C:\\\\Users\\\\jorge\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Dev-ruppit-landing-page\\\\36fc5a2a-79ce-4de5-ba0b-c8f837d1fff9\\\\scratchpad\\\\terms.png\"; $edge = \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\"; if \\(-not \\(Test-Path $edge\\)\\) { $edge = \"C:\\\\Program Files\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\" }; if \\(Test-Path $edge\\) { & $edge --headless=new --disable-gpu --hide-scrollbars \"--screenshot=$out\" --window-size=1440,2400 \"http://localhost:3000/terms-and-conditions\" 2>$null; Start-Sleep -Seconds 3; if \\(Test-Path $out\\) { \"OK: $out \\($\\(\\(Get-Item $out\\).Length\\) bytes\\)\" } else { \"no screenshot generado\" } } else { \"Edge no encontrado\" })",
+      "PowerShell($out = \"C:\\\\Users\\\\jorge\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Dev-ruppit-landing-page\\\\36fc5a2a-79ce-4de5-ba0b-c8f837d1fff9\\\\scratchpad\\\\delete-acc.png\"; $edge = \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\"; if \\(-not \\(Test-Path $edge\\)\\) { $edge = \"C:\\\\Program Files\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\" }; & $edge --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=4000 \"--screenshot=$out\" --window-size=1440,3600 \"http://localhost:3000/delete-account\" 2>$null; Start-Sleep -Seconds 3; if \\(Test-Path $out\\) { \"OK \\($\\(\\(Get-Item $out\\).Length\\) bytes\\)\" } else { \"no screenshot\" })",
+      "PowerShell($out = \"C:\\\\Users\\\\jorge\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Dev-ruppit-landing-page\\\\36fc5a2a-79ce-4de5-ba0b-c8f837d1fff9\\\\scratchpad\\\\delete-acc2.png\"; $edge = \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\"; if \\(-not \\(Test-Path $edge\\)\\) { $edge = \"C:\\\\Program Files\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\" }; & $edge --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=4000 \"--screenshot=$out\" --window-size=1440,3600 \"http://localhost:3000/delete-account\" 2>$null; Start-Sleep -Seconds 3; if \\(Test-Path $out\\) { \"OK\" } else { \"no screenshot\" })"
     ]
   }
 }
