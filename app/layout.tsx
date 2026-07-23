@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, IBM_Plex_Mono } from "next/font/google";
+import { SITE_URL, GOOGLE_SITE_VERIFICATION } from "@/lib/constants";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,7 +27,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ruppit.com"),
+  metadataBase: new URL(SITE_URL),
+  applicationName: "Ruppit",
+  category: "travel",
   title: {
     default: "Ruppit – Viaja a tu precio en las provincias de Bolivia",
     template: "%s | Ruppit",
@@ -47,9 +50,19 @@ export const metadata: Metadata = {
     "provincias Bolivia transporte",
     "app movilidad Bolivia",
   ],
-  authors: [{ name: "Ruppit", url: "https://ruppit.com" }],
+  authors: [{ name: "Ruppit", url: SITE_URL }],
   creator: "Ruppit",
   publisher: "Ruppit",
+  appleWebApp: {
+    capable: true,
+    title: "Ruppit",
+    statusBarStyle: "black-translucent",
+  },
+  formatDetection: { telephone: false },
+  // Verificación por etiqueta HTML (solo si NO verificaste el dominio por DNS).
+  ...(GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: GOOGLE_SITE_VERIFICATION } }
+    : {}),
   robots: {
     index: true,
     follow: true,

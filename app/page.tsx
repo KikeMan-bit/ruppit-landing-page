@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL, PLAY_STORE_URL, SAME_AS } from "@/lib/constants";
 import HomeNavbar from "./components/home/HomeNavbar";
 import HomeHero from "./components/home/HomeHero";
 import TrustSection from "./components/home/TrustSection";
@@ -11,10 +12,10 @@ import HomeFooter from "./components/home/HomeFooter";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://ruppit.com",
+    canonical: SITE_URL,
   },
   openGraph: {
-    url: "https://ruppit.com",
+    url: SITE_URL,
   },
 };
 
@@ -23,12 +24,13 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://ruppit.com/#organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "Ruppit",
-      url: "https://ruppit.com",
+      alternateName: "Ruppit App",
+      url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: "https://ruppit.com/logo.webp",
+        url: `${SITE_URL}/logo.webp`,
       },
       description:
         "Ruppit es una app de movilidad compartida donde tú propones el precio de tu viaje. Conectamos pasajeros con conductores verificados en Bolivia.",
@@ -46,14 +48,34 @@ const jsonLd = {
           name: "Bolivia",
         },
       },
+      // Perfiles oficiales: ayuda a Google a identificar la entidad "Ruppit".
+      sameAs: SAME_AS,
     },
     {
       "@type": "WebSite",
-      "@id": "https://ruppit.com/#website",
-      url: "https://ruppit.com",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
       name: "Ruppit",
       description: "App de movilidad compartida en Bolivia",
-      publisher: { "@id": "https://ruppit.com/#organization" },
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": `${SITE_URL}/#app`,
+      name: "Ruppit",
+      operatingSystem: "ANDROID",
+      applicationCategory: "TravelApplication",
+      url: SITE_URL,
+      downloadUrl: PLAY_STORE_URL,
+      installUrl: PLAY_STORE_URL,
+      description:
+        "App de movilidad compartida y delivery para las provincias de Bolivia. Propón el precio de tu viaje y conecta con conductores verificados.",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "BOB",
+      },
     },
     {
       "@type": "FAQPage",
