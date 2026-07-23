@@ -1,8 +1,12 @@
+import { LegalDoc, Section, Subsection, Callout, Table } from "@/app/components/legal/_ui";
+
 export default function PrivacyPolicy() {
   return (
-    <main className="mx-auto mt-16 w-full max-w-3xl px-6 pb-24">
-      <h1 className="mb-2 text-4xl font-medium tracking-tight sm:text-5xl">Política de Privacidad</h1>
-      <p className="text-muted-foreground mb-12 text-sm">Versión vigente: junio de 2026</p>
+    <LegalDoc
+      title="Política de Privacidad"
+      version="julio de 2026"
+      appliesTo="Todas las personas y negocios que usan Ruppit."
+    >
 
       <Section title="1. Introducción">
         <p>
@@ -83,6 +87,12 @@ export default function PrivacyPolicy() {
             <li>Ubicación del Usuario cuando la Aplicación está cerrada o en segundo plano.</li>
             <li>Información de contactos del dispositivo.</li>
             <li>Datos de otras aplicaciones instaladas en el dispositivo.</li>
+            <li>
+              <strong>
+                Datos de salud, historial clínico, diagnósticos, recetas médicas ni información sobre medicamentos
+                consumidos por el Usuario.
+              </strong>
+            </li>
           </ul>
         </Subsection>
       </Section>
@@ -106,6 +116,10 @@ export default function PrivacyPolicy() {
             <li>Permitir al conductor navegar hacia el punto de recogida y el destino.</li>
             <li>Rastrear el trayecto del viaje en tiempo real.</li>
             <li>Calcular la tarifa sugerida en función de la distancia y el recorrido estimado.</li>
+            <li>
+              Ordenar por cercanía el listado informativo de farmacias de turno, conforme a la sección 6 de esta
+              Política.
+            </li>
           </ul>
         </Subsection>
         <Subsection title="3.3 Cómo gestionamos los datos de ubicación">
@@ -153,8 +167,8 @@ export default function PrivacyPolicy() {
                 "Permite fotografiar los documentos vehiculares aplicables.",
               ],
               [
-                "Recarga de wallet Ruppit",
-                "Activa el escáner para leer el código QR y recargar el saldo de la wallet del conductor.",
+                "Recarga de Monedas Ruppit",
+                "Activa el escáner para leer el código QR y recargar el saldo de Monedas del conductor o repartidor.",
               ],
             ]}
           />
@@ -175,8 +189,85 @@ export default function PrivacyPolicy() {
         </p>
       </Section>
 
-      <Section title="6. Cómo usamos sus datos">
-        <Subsection title="6.1 Prestación del servicio">
+      <Section title="6. Farmacias de turno y datos de salud">
+        <Callout>
+          La consulta de farmacias de turno es un servicio meramente informativo.{" "}
+          <strong>
+            Ruppit no recopila datos de salud, no elabora perfiles médicos y no comparte sus consultas con farmacias,
+            aseguradoras, laboratorios ni anunciantes.
+          </strong>
+        </Callout>
+
+        <Subsection title="6.1 Qué datos se tratan al consultar farmacias de turno">
+          <p>Al abrir la sección de farmacias de turno, la Aplicación trata únicamente:</p>
+          <ul>
+            <li>
+              <strong>Su ubicación aproximada en ese momento</strong>, con el único fin de ordenar por cercanía las
+              farmacias de turno de su localidad. Se procesa en tiempo real y no se asocia a su historial de viajes.
+            </li>
+            <li>
+              <strong>Datos técnicos agregados de uso</strong>, como el número de veces que se abre la sección, para
+              medir el interés en la funcionalidad.
+            </li>
+          </ul>
+          <p>
+            Si el Usuario no concede el permiso de ubicación, la sección seguirá siendo utilizable mostrando las
+            farmacias de turno de la localidad seleccionada manualmente.
+          </p>
+        </Subsection>
+
+        <Subsection title="6.2 Datos que NO se tratan en esta sección">
+          <p>Ruppit no recopila, no infiere ni almacena:</p>
+          <ul>
+            <li>Medicamentos buscados, consultados, adquiridos o consumidos por el Usuario.</li>
+            <li>Recetas médicas, diagnósticos, síntomas, patologías o cualquier información clínica.</li>
+            <li>Perfiles de salud, categorías sensibles o segmentaciones basadas en condiciones médicas.</li>
+          </ul>
+          <p>
+            La información mostrada corresponde a establecimientos comerciales (nombre, dirección, horario de turno y
+            teléfono) obtenida de fuentes públicas o de la propia farmacia;{" "}
+            <strong>no se trata de datos personales del Usuario.</strong>
+          </p>
+        </Subsection>
+
+        <Subsection title="6.3 Ruppit no comercializa productos farmacéuticos">
+          <p>
+            Ruppit no vende ni dispensa medicamentos ni productos farmacéuticos, y no participa en ninguna transacción
+            entre el Usuario y la farmacia.{" "}
+            <strong>
+              Ruppit no recibe de las farmacias información sobre las compras, consultas o productos adquiridos por el
+              Usuario.
+            </strong>{" "}
+            El régimen completo de este servicio se detalla en la cláusula 9 de los Términos y Condiciones.
+          </p>
+        </Subsection>
+
+        <Subsection title="6.4 Envíos desde farmacias mediante el servicio de delivery">
+          <p>
+            Si el Usuario solicita un envío desde una farmacia a través del servicio de delivery, se aplican las
+            siguientes reglas:
+          </p>
+          <ul>
+            <li>
+              El repartidor recibe únicamente los datos operativos indispensables para el encargo: el punto de recojo,
+              el punto de entrega, el nombre del Usuario y las instrucciones que este haya escrito.
+            </li>
+            <li>
+              El contenido que el Usuario escriba en la descripción del pedido se conserva únicamente durante el tiempo
+              necesario para completar la entrega y resolver eventuales reclamos, y{" "}
+              <strong>no se utiliza para publicidad, segmentación ni análisis de comportamiento.</strong>
+            </li>
+            <li>
+              Recomendamos <strong>no incluir información clínica ni datos de salud</strong> en las instrucciones del
+              pedido. Cualquier dato de esa naturaleza que el Usuario proporcione voluntariamente será tratado con
+              carácter estrictamente confidencial y eliminado una vez concluida la entrega y el plazo de reclamos.
+            </li>
+          </ul>
+        </Subsection>
+      </Section>
+
+      <Section title="7. Cómo usamos sus datos">
+        <Subsection title="7.1 Prestación del servicio">
           <ul>
             <li>Gestionar y mantener su cuenta de usuario.</li>
             <li>Conectar pasajeros con conductores disponibles.</li>
@@ -184,21 +275,21 @@ export default function PrivacyPolicy() {
             <li>Procesar y registrar los viajes completados.</li>
           </ul>
         </Subsection>
-        <Subsection title="6.2 Seguridad y verificación">
+        <Subsection title="7.2 Seguridad y verificación">
           <ul>
             <li>Verificar la identidad de los conductores registrados.</li>
             <li>Detectar y prevenir fraudes, abusos o conductas que violen nuestros Términos.</li>
             <li>Investigar y resolver disputas reportadas entre usuarios.</li>
           </ul>
         </Subsection>
-        <Subsection title="6.3 Mejora del servicio">
+        <Subsection title="7.3 Mejora del servicio">
           <ul>
             <li>Analizar datos de uso agregados y anonimizados para mejorar el funcionamiento de la Aplicación.</li>
             <li>Identificar y corregir errores técnicos.</li>
             <li>Desarrollar nuevas funcionalidades.</li>
           </ul>
         </Subsection>
-        <Subsection title="6.4 Cumplimiento legal">
+        <Subsection title="7.4 Cumplimiento legal">
           <ul>
             <li>Cumplir con obligaciones legales, reglamentarias o judiciales aplicables en Bolivia.</li>
             <li>Conservar registros que puedan ser requeridos por autoridades competentes mediante orden judicial.</li>
@@ -206,12 +297,12 @@ export default function PrivacyPolicy() {
         </Subsection>
       </Section>
 
-      <Section title="7. Datos que compartimos con terceros">
+      <Section title="8. Datos que compartimos con terceros">
         <Callout>
           Ruppit no vende, no alquila ni cede datos personales a terceros con fines publicitarios o comerciales.
         </Callout>
 
-        <Subsection title="7.1 Con conductores">
+        <Subsection title="8.1 Con conductores">
           <p>Durante el transcurso de un viaje, el conductor recibe:</p>
           <ul>
             <li>Nombre del pasajero.</li>
@@ -220,7 +311,7 @@ export default function PrivacyPolicy() {
           </ul>
         </Subsection>
 
-        <Subsection title="7.2 Con proveedores de servicios de mapas">
+        <Subsection title="8.2 Con proveedores de servicios de mapas">
           <p>
             Para calcular rutas y rastrear el trayecto del viaje, la Aplicación utiliza servicios de mapas de terceros.
             A estos proveedores se les comparten <strong>únicamente los datos de ubicación estrictamente necesarios</strong>{" "}
@@ -228,7 +319,7 @@ export default function PrivacyPolicy() {
           </p>
         </Subsection>
 
-        <Subsection title="7.3 Con Banco Económico (pagos por QR)">
+        <Subsection title="8.3 Con Banco Económico (pagos por QR)">
           <p>
             Cuando el Usuario elige el pago por código QR, se comparten con el Banco Económico{" "}
             <strong>únicamente los datos indispensables para procesar la transacción.</strong> Ruppit no interviene en
@@ -236,23 +327,35 @@ export default function PrivacyPolicy() {
           </p>
         </Subsection>
 
-        <Subsection title="7.4 Con autoridades competentes">
+        <Subsection title="8.4 Con autoridades competentes">
           <p>
             Ruppit podrá divulgar datos personales a autoridades judiciales, fiscales o administrativas bolivianas{" "}
             <strong>únicamente ante una orden judicial válida</strong> y en los términos exactos que dicha orden
             establezca.
           </p>
         </Subsection>
+
+        <Subsection title="8.5 Con farmacias de turno">
+          <p>
+            <strong>Ruppit no comparte ningún dato personal del Usuario con las farmacias listadas.</strong> La consulta
+            del listado es unidireccional: el Usuario ve la información del establecimiento, pero la farmacia no recibe
+            de Ruppit su identidad, su ubicación ni el hecho de que haya realizado la consulta.
+          </p>
+          <p>
+            Únicamente cuando el Usuario solicite de forma expresa un envío desde una farmacia mediante el servicio de
+            delivery, el repartidor recibirá los datos operativos indispensables descritos en la sección 6.4.
+          </p>
+        </Subsection>
       </Section>
 
-      <Section title="8. Pagos y datos bancarios">
-        <Subsection title="8.1 Pago en efectivo">
+      <Section title="9. Pagos y datos bancarios">
+        <Subsection title="9.1 Pago en efectivo">
           <p>
             Los pagos en efectivo se realizan directamente entre pasajero y conductor al finalizar el viaje. Este
             método no genera ningún dato digital procesado o almacenado por Ruppit.
           </p>
         </Subsection>
-        <Subsection title="8.2 Pago por código QR">
+        <Subsection title="9.2 Pago por código QR">
           <p>
             Los pagos mediante código QR son compatibles con cualquier entidad bancaria boliviana que admita este
             método. La transacción se procesa directamente a través de la entidad bancaria del Usuario.
@@ -269,7 +372,7 @@ export default function PrivacyPolicy() {
         </Subsection>
       </Section>
 
-      <Section title="9. Seguridad de los datos">
+      <Section title="10. Seguridad de los datos">
         <p>Ruppit aplica medidas técnicas y organizativas razonables para proteger sus datos personales, incluyendo:</p>
         <ul>
           <li>Transmisión de datos mediante protocolos de cifrado (HTTPS/TLS).</li>
@@ -283,7 +386,7 @@ export default function PrivacyPolicy() {
         </p>
       </Section>
 
-      <Section title="10. Retención de datos">
+      <Section title="11. Retención de datos">
         <Table
           headers={["Tipo de dato", "Período de retención"]}
           rows={[
@@ -307,6 +410,10 @@ export default function PrivacyPolicy() {
               "Datos técnicos y de uso de la Aplicación",
               "Hasta 12 meses, en formato agregado y anonimizado para análisis de mejora.",
             ],
+            [
+              "Consultas de farmacias de turno",
+              "No se conserva registro individual. La ubicación se procesa en el momento de la consulta y no se almacena; solo se guardan métricas agregadas y anonimizadas de uso.",
+            ],
           ]}
         />
         <p className="mt-3">
@@ -315,7 +422,7 @@ export default function PrivacyPolicy() {
         </p>
       </Section>
 
-      <Section title="11. Cookies y seguimiento en la web">
+      <Section title="12. Cookies y seguimiento en la web">
         <p>
           El sitio web <strong>ruppit.com</strong> utiliza exclusivamente{" "}
           <strong>cookies técnicas esenciales</strong>, es decir, aquellas estrictamente necesarias para el
@@ -333,7 +440,7 @@ export default function PrivacyPolicy() {
         </p>
       </Section>
 
-      <Section title="12. Derechos del usuario sobre sus datos">
+      <Section title="13. Derechos del usuario sobre sus datos">
         <p>El Usuario tiene los siguientes derechos sobre sus datos personales:</p>
         <ul>
           <li>
@@ -364,7 +471,7 @@ export default function PrivacyPolicy() {
         </p>
       </Section>
 
-      <Section title="13. Menores de edad">
+      <Section title="14. Menores de edad">
         <p>
           La Aplicación está dirigida a personas mayores de dieciocho (18) años. Ruppit no recopila de manera
           intencional datos personales de menores de edad.
@@ -377,7 +484,7 @@ export default function PrivacyPolicy() {
         </p>
       </Section>
 
-      <Section title="14. Cambios a esta política">
+      <Section title="15. Cambios a esta política">
         <p>
           Ruppit podrá modificar esta Política de Privacidad cuando sea necesario, por ejemplo, ante cambios en el
           servicio, nuevas funcionalidades o modificaciones legales. Cuando se realicen cambios sustanciales, le
@@ -394,7 +501,7 @@ export default function PrivacyPolicy() {
         </p>
       </Section>
 
-      <Section title="15. Contacto">
+      <Section title="16. Contacto">
         <p>
           Si tiene preguntas, dudas o desea ejercer alguno de sus derechos sobre sus datos personales, puede
           comunicarse con nosotros:
@@ -412,64 +519,6 @@ export default function PrivacyPolicy() {
           Operaciones: Camiri, Santa Cruz, Estado Plurinacional de Bolivia
         </p>
       </Section>
-    </main>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="mb-10">
-      <h2 className="mb-4 text-xl font-semibold tracking-tight sm:text-2xl">{title}</h2>
-      <div className="text-muted-foreground flex flex-col gap-3 text-sm leading-7 sm:text-base [&_a]:text-[#b38900] [&_a]:underline [&_a]:underline-offset-4 [&_li]:ml-4 [&_li]:list-disc [&_strong]:text-foreground">
-        {children}
-      </div>
-    </section>
-  );
-}
-
-function Subsection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="mb-4">
-      <h3 className="text-foreground mb-2 font-medium">{title}</h3>
-      <div className="flex flex-col gap-2">{children}</div>
-    </div>
-  );
-}
-
-function Callout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="border-primary/40 bg-primary/5 mb-4 rounded-lg border-l-4 px-4 py-3 text-sm">
-      <strong className="text-foreground">Aviso importante: </strong>
-      {children}
-    </div>
-  );
-}
-
-function Table({ headers, rows }: { headers: string[]; rows: string[][] }) {
-  return (
-    <div className="overflow-x-auto rounded-lg border border-border">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="bg-muted/50">
-            {headers.map((h) => (
-              <th key={h} className="text-foreground px-4 py-2 text-left font-medium">
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, i) => (
-            <tr key={i} className="border-t border-border">
-              {row.map((cell, j) => (
-                <td key={j} className="px-4 py-2">
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    </LegalDoc>
   );
 }

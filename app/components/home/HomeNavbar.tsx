@@ -52,7 +52,7 @@ export default function HomeNavbar({
               width={69}
               height={20}
               priority
-              className="h-5 w-auto"
+              className="h-7 w-auto"
             />
           </Link>
 
@@ -71,14 +71,14 @@ export default function HomeNavbar({
 
           {/* Acciones (desktop) */}
           <div className="hidden lg:flex items-center gap-2">
-            <button
+            {/* <button
               type="button"
               className="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 font-body text-[14px] text-[#bdbdbd] transition-colors hover:text-white"
               aria-label="Cambiar idioma"
             >
               Español
               <ChevronDown size={12} strokeWidth={2.5} />
-            </button>
+            </button> */}
             <CtaButton className="rounded-lg px-3.5 py-1.5 text-[14px]">
               Descarga la App
             </CtaButton>
