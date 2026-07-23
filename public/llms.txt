@@ -1,0 +1,29 @@
+# Ruppit
+
+> Ruppit es una app de movilidad compartida y delivery para las provincias de Bolivia, donde el pasajero propone el precio de su viaje y un conductor verificado lo acepta. Sin tarifas impuestas ni comisiones ocultas.
+
+Ruppit nació en Camiri (Bolivia) como ciudad piloto, con expansión planificada a más provincias. Está disponible gratis en Google Play para Android; la versión para iOS llegará próximamente. Ruppit es una plataforma tecnológica que conecta pasajeros con conductores independientes; no presta directamente el servicio de transporte.
+
+## Qué es y cómo funciona
+- Modelo de precio: el usuario propone la tarifa de su viaje y los conductores cercanos deciden si la aceptan. Tú decides cuánto pagar.
+- Servicios: viajes en ciudad y delivery (comida, farmacia, mercado y paquetes).
+- Seguridad: los conductores pasan verificación de identidad y de documentos del vehículo; cada viaje queda registrado y admite calificaciones y reseñas.
+- Transparencia: la tarifa que propones es la que pagas; sin comisiones ocultas.
+- Pasajeros compartidos: puedes viajar solo o compartir el viaje con otros para dividir el costo.
+
+## Enlaces
+- [Sitio principal](https://ruppit.com): información general de Ruppit
+- [Pasajeros](https://ruppit.com/customer): cómo viajar y proponer tu precio
+- [Conductores](https://ruppit.com/driver): cómo generar ingresos manejando con Ruppit
+- [Descargar en Google Play](https://play.google.com/store/apps/details?id=com.ruppit): app para Android
+- [Instagram](https://www.instagram.com/ruppit_oficial): perfil oficial
+- [TikTok](https://www.tiktok.com/@ruppit_oficial): perfil oficial
+
+## Datos clave
+- Nombre: Ruppit
+- Categoría: movilidad compartida (ridesharing) y delivery
+- País: Bolivia
+- Ciudad piloto: Camiri
+- Plataforma: Android (Google Play); iOS próximamente
+- Contacto: soporte@ruppit.com
+- Sitio web: https://ruppit.com
