@@ -1,30 +1,51 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/constants";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+
   return [
     {
-      url: "https://ruppit.com",
-      lastModified: new Date(),
+      url: SITE_URL,
+      lastModified,
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://ruppit.com/driver",
-      lastModified: new Date(),
+      url: `${SITE_URL}/customer`,
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://ruppit.com/privacy-policy",
-      lastModified: new Date(),
+      url: `${SITE_URL}/driver`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/delivery`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/business`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/privacy-policy`,
+      lastModified,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
-      url: "https://ruppit.com/terms-and-conditions",
-      lastModified: new Date(),
+      url: `${SITE_URL}/terms-and-conditions`,
+      lastModified,
       changeFrequency: "yearly",
       priority: 0.3,
     },

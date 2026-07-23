@@ -61,6 +61,10 @@
       "Bash(python -)",
       "Bash(sed -i 's|<LegalCenter initial=\"privacidad\" />|<LegalCenter family=\"privacy\" />|' app/privacy-policy/page.tsx)",
       "Bash(sed -i 's|<LegalCenter initial=\"terminos\" />|<LegalCenter family=\"terms\" />|' app/terms-and-conditions/page.tsx)"
+      "WebFetch(domain:ruppit.com)",
+      "WebSearch",
+      "PowerShell(pnpm lint *)",
+      "PowerShell(npx eslint app/page.tsx app/layout.tsx app/sitemap.ts app/robots.ts app/manifest.ts lib/constants.ts app/components/home/HomeFooter.tsx 2>&1 | Select-Object -Last 30)"
     ]
   }
 }
