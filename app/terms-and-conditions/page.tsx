@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import HomeNavbar from "@/app/components/home/HomeNavbar";
 import HomeFooter from "@/app/components/home/HomeFooter";
-import TermsAndConditions from "@/app/components/terms-and-conditions";
+import LegalCenter from "@/app/components/legal/LegalCenter";
 
 export const metadata: Metadata = {
   title: "Términos y Condiciones",
   description:
-    "Lee los términos y condiciones de uso de Ruppit, la app de movilidad compartida en Bolivia.",
+    "Lee los términos y condiciones de uso de Ruppit: transporte, delivery, locales y farmacias de turno.",
   robots: { index: false, follow: false },
   alternates: { canonical: "https://ruppit.com/terms-and-conditions" },
 };
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-white">
       <HomeNavbar />
-      <TermsAndConditions />
+      <LegalCenter family="terms" />
       <HomeFooter />
     </div>
   );

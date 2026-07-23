@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import HomeNavbar from "@/app/components/home/HomeNavbar";
 import HomeFooter from "@/app/components/home/HomeFooter";
-import PrivacyPolicy from "@/app/components/privacy-policy";
+import LegalCenter from "@/app/components/legal/LegalCenter";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad",
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-white">
       <HomeNavbar />
-      <PrivacyPolicy />
+      <LegalCenter family="privacy" />
       <HomeFooter />
     </div>
   );
